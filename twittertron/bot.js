@@ -54,23 +54,26 @@ stream.on('tweet', function (tweet) {
         screen_name,
         words.length,
         hashtags.length,
-        mentions,
+        mentions.length,
         chksum,
-        hashtags,
-        '\n>>',
-        id,
-        '\n>>',
-        sentence
+        '\n>> ' + hashtags,
+        '\n>> ' + id,
+        '\n>> ' + sentence,
+        '\n>> ' + textToHashTag(sentence, cliches)
     );
 
-    console.log('>>', textToHashTag(sentence, cliches));
-
-    if (db.persistChecksum(chksum, screen_name, id_str)) {
-        console.log('Persisted', chksum, id);
-        setTimeout(() => like(id_str), random(30, 10));
-        setTimeout(() => retweetid(id_str), random(90, 30));
-    }
+    promoteId(meta);
 });
+
+function promoteId({ chksum, screen_name, id, id_str }) {
+    if (!db.persistChecksum(chksum, screen_name, id_str)) return;
+
+    const [l, r] = [random(30, 10), random(90, 30)];
+    console.log('Persisted %s %s\nLike: %s\nRe: %s\n\n', chksum, id, l, r);
+
+    setTimeout(() => like(id_str, screen_name), l);
+    setTimeout(() => retweetid(id_str, screen_name), r);
+}
 
 function random(max = 60, min = 15) {
     // arguments in seconds but
@@ -79,22 +82,22 @@ function random(max = 60, min = 15) {
     return seconds * 1000;
 }
 
-function like(id) {
+function like(id, name) {
     const path = 'favorites/create';
     const params = { id };
     const callback = function (e) {
-        console.log('liked', id);
+        console.log('<< liked', name);
         if (e) console.log(e);
     };
 
     T.post(path, params, callback);
 }
 
-function retweetid(id) {
+function retweetid(id, name) {
     const path = 'statuses/retweet/:id';
     const params = { id };
     const callback = function (e, r) {
-        console.log('retweeted', id);
+        console.log('<< retweeted', name);
         if (e) console.log(e);
     };
 

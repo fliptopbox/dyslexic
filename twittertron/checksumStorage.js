@@ -16,7 +16,7 @@ function checksumData() {
 }
 
 function parseChecksumData(tsv) {
-    const maxLines = 333;
+    const maxLines = 300;
     const tail = tsv
         .trim()
         .split("\n")
