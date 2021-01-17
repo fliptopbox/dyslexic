@@ -1,8 +1,13 @@
+const path = require('path');
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.use(express.static('./public'));
+
+const filename = "public"
+const fullpath = path.join(__dirname, filename);
+
+app.use(express.static(fullpath));
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });

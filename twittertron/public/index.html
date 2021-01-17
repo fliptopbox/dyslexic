@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twittertron</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <h1>twittertron</h1>
+    <pre></pre>
     <script>
-        fetch("checksums.txt")
+        fetch("/checksums.txt")
             .then(d => d.text())
-            .then(console.log)
+            .then(txt => {
+                const array = txt.split("\n")
+                    .reverse()
+                    .map((s,i) => `${i}\t${s}`);
+
+                const content = `
+                    Updated: ${new Date().toISOString()}
+                    \n${array.join("\n")}
+                `.trim();
+                document.querySelector("pre")
+                    .innerHTML = content;
+            });
      </script>
 </body>
 </html>

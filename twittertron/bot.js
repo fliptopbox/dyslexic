@@ -1,12 +1,14 @@
 // Twitter Bot
 // https://hackernoon.com/create-a-simple-twitter-bot-with-node-js-5b14eb006c08#.flysreo60
+// https://devcenter.heroku.com/articles/node-websockets
 //
 
 console.clear();
 
 const twit = require('twit');
-const config = require('./config.js');
 const cliche = require('cliches');
+
+const config = require('./config.js');
 const db = require('./checksumStorage');
 const track = require('./track');
 const metadata = require('./metadata');
@@ -27,7 +29,6 @@ stream.on('tweet', function (tweet) {
         hashtags,
         mentions,
         words,
-        id_str,
         screen_name,
         chksum,
         lang,
