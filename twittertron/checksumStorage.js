@@ -20,25 +20,23 @@ function checksumData() {
 }
 
 function parseChecksumData(tsv) {
-    const maxLines = 300;
-    const tail = tsv
+    const text = tsv
         .trim()
         .split('\n')
         .filter((s) => !/^#/.test(s))
-        .slice(-maxLines);
-
-    const text = tail.map((line) => {
-        const [key, name, id] = line.split(/\s+/);
-        return [key, { key, name, id }];
-    });
+        .map((line) => {
+            const [key, name, id, tags = ""] = line.split(/\s+/);
+            return [key, { key, name, id, tags }];
+        });
 
     return Object.fromEntries(text);
 }
 
-function persistChecksum(key, name, id) {
+function persistChecksum(key, name, id, rehashtags) {
     if (checksumExists(key)) return;
 
-    checksums[key] = { key, id, name };
+    const tags = rehashtags.join(",")
+    checksums[key] = { key, id, name, tags };
 
     const content = serializeCollection(checksums);
     const options = { encoding: 'utf8', flag: 'w' };
@@ -51,16 +49,17 @@ function persistChecksum(key, name, id) {
     return { ...checksums };
 }
 
-function serializeCollection(collection) {
-    const array = Object.entries(collection)
-        .sort((aa, bb) => {
-            const a = Number(aa[1].id);
-            const b = Number(bb[1].id);
-            return a - b;
-        })
+function serializeCollection(collection, tail = 300) {
+    const entries = Object.entries(collection).sort((aa, bb) => {
+        const a = Number(aa[1].id);
+        const b = Number(bb[1].id);
+        return a - b;
+    }).slice(-tail);
+
+    const array = entries
         .map(([_, object]) => {
-            const { id, name, key } = object;
-            return `${key}\t${name}\t${id}`;
+            const { id, name, key, tags } = object;
+            return `${key}\t${name}\t${id}\t${tags}`;
         })
         .join('\n');
 

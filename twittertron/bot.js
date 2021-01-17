@@ -50,6 +50,8 @@ stream.on('tweet', function (tweet) {
 
     if (!cliches) return;
 
+    const rehashtags = textToHashTag(sentence, cliches);
+
     console.log(
         '\n>> (%s) w%s #%s @%s <%s>',
         screen_name,
@@ -60,14 +62,14 @@ stream.on('tweet', function (tweet) {
         '\n>> ' + hashtags,
         '\n>> ' + id,
         '\n>> ' + sentence,
-        '\n>> ' + textToHashTag(sentence, cliches)
+        '\n>> ' + rehashtags
     );
 
-    promoteId(meta);
+    promoteId({ ...meta, rehashtags });
 });
 
-function promoteId({ chksum, screen_name, id, id_str }) {
-    if (!db.persistChecksum(chksum, screen_name, id_str)) return;
+function promoteId({ chksum, rehashtags, screen_name, id, id_str }) {
+    if (!db.persistChecksum(chksum, screen_name, id_str, rehashtags)) return;
 
     const [l, r] = [random(30, 10), random(90, 30)];
     console.log('Persisted %s %s\nLike: %s\nRe: %s\n\n', chksum, id, l, r);
