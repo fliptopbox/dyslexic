@@ -1,5 +1,9 @@
 const fs = require('fs');
+const path = require('path');
+
 const filename = './checksums.tsv';
+const fullpath = path.join(__dirname, filename);
+
 let checksums = initialize();
 
 module.exports = {
@@ -8,26 +12,25 @@ module.exports = {
     serializeCollection,
     checksumExists,
     loadChecksumData,
-    checksumData
-}
+    checksumData,
+};
 
 function checksumData() {
-    return {...checksums};
+    return { ...checksums };
 }
 
 function parseChecksumData(tsv) {
     const maxLines = 300;
     const tail = tsv
         .trim()
-        .split("\n")
-        .filter(s => !/^#/.test(s))
+        .split('\n')
+        .filter((s) => !/^#/.test(s))
         .slice(-maxLines);
 
-    const text = tail
-        .map((line) => {
-            const [key, name, id] = line.split(/\s+/);
-            return [key, { key, name, id }];
-        });
+    const text = tail.map((line) => {
+        const [key, name, id] = line.split(/\s+/);
+        return [key, { key, name, id }];
+    });
 
     return Object.fromEntries(text);
 }
@@ -35,17 +38,17 @@ function parseChecksumData(tsv) {
 function persistChecksum(key, name, id) {
     if (checksumExists(key)) return;
 
-    checksums[key] = {key, id, name};
+    checksums[key] = { key, id, name };
 
     const content = serializeCollection(checksums);
     const options = { encoding: 'utf8', flag: 'w' };
 
     try {
-        fs.writeFileSync(filename, content, options);
+        fs.writeFileSync(fullpath, content, options);
     } catch (e) {
         console.log('Error:', e.stack);
     }
-    return {...checksums};
+    return { ...checksums };
 }
 
 function serializeCollection(collection) {
@@ -56,9 +59,10 @@ function serializeCollection(collection) {
             return a - b;
         })
         .map(([_, object]) => {
-            const {id,name,key} = object;
+            const { id, name, key } = object;
             return `${key}\t${name}\t${id}`;
-        }).join("\n")
+        })
+        .join('\n');
 
     return array;
 }
@@ -69,7 +73,7 @@ function checksumExists(key) {
 
 function loadChecksumData() {
     try {
-        return fs.readFileSync(filename, 'utf8');
+        return fs.readFileSync(fullpath, 'utf8');
     } catch (e) {
         console.log('Error:', e.stack);
     }
