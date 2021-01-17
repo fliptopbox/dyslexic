@@ -1,0 +1,153 @@
+{
+    "created_at": "Sun Jan 17 14:15:02 +0000 2021",
+    "id": 1350808856692224000,
+    "id_str": "1350808856692224010",
+    "text": "Give your spells flash with this futuristic artifact creature designed by @joeschobo \n\n#mtg #magicthegathering… https://t.co/F9XBxkaxhA",
+    "source": "<a href=\"http://instagram.com\" rel=\"nofollow\">Instagram</a>",
+    "truncated": true,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+        "id": 916745992552308700,
+        "id_str": "916745992552308736",
+        "name": "custommagic.cards",
+        "screen_name": "custommagiccard",
+        "location": null,
+        "url": null,
+        "description": "Twitter feed of https://instagram.com/custommagic.cards/",
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 38,
+        "friends_count": 163,
+        "listed_count": 0,
+        "favourites_count": 5425,
+        "statuses_count": 1521,
+        "created_at": "Sat Oct 07 19:24:11 +0000 2017",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "lang": null,
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "F5F8FA",
+        "profile_background_image_url": "",
+        "profile_background_image_url_https": "",
+        "profile_background_tile": false,
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1149661293567070208/nGtG6h62_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1149661293567070208/nGtG6h62_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/916745992552308736/1601183984",
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "extended_tweet": {
+        "full_text": "Give your spells flash with this futuristic artifact creature designed by @joeschobo \n\n#mtg #magicthegathering #custommtg #custommagic #custommagiccard  #custommagicthegathering #flash https://t.co/mKor8NVQyW",
+        "display_text_range": [0, 208],
+        "entities": {
+            "hashtags": [
+                {
+                    "text": "mtg",
+                    "indices": [87, 91]
+                },
+                {
+                    "text": "magicthegathering",
+                    "indices": [92, 110]
+                },
+                {
+                    "text": "custommtg",
+                    "indices": [111, 121]
+                },
+                {
+                    "text": "custommagic",
+                    "indices": [122, 134]
+                },
+                {
+                    "text": "custommagiccard",
+                    "indices": [135, 151]
+                },
+                {
+                    "text": "custommagicthegathering",
+                    "indices": [153, 177]
+                },
+                {
+                    "text": "flash",
+                    "indices": [178, 184]
+                }
+            ],
+            "urls": [
+                {
+                    "url": "https://t.co/mKor8NVQyW",
+                    "expanded_url": "https://www.instagram.com/p/CKJinEsHt8H/?igshid=hle3dausm0kf",
+                    "display_url": "instagram.com/p/CKJinEsHt8H/…",
+                    "indices": [185, 208]
+                }
+            ],
+            "user_mentions": [
+                {
+                    "screen_name": "joeschobo",
+                    "name": "joeschobo",
+                    "id": 1159795563103211500,
+                    "id_str": "1159795563103211522",
+                    "indices": [74, 84]
+                }
+            ],
+            "symbols": []
+        }
+    },
+    "quote_count": 0,
+    "reply_count": 0,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "entities": {
+        "hashtags": [
+            {
+                "text": "mtg",
+                "indices": [87, 91]
+            },
+            {
+                "text": "magicthegathering",
+                "indices": [92, 110]
+            }
+        ],
+        "urls": [
+            {
+                "url": "https://t.co/F9XBxkaxhA",
+                "expanded_url": "https://twitter.com/i/web/status/1350808856692224010",
+                "display_url": "twitter.com/i/web/status/1…",
+                "indices": [112, 135]
+            }
+        ],
+        "user_mentions": [
+            {
+                "screen_name": "joeschobo",
+                "name": "joeschobo",
+                "id": 1159795563103211500,
+                "id_str": "1159795563103211522",
+                "indices": [74, 84]
+            }
+        ],
+        "symbols": []
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "filter_level": "low",
+    "lang": "en",
+    "timestamp_ms": "1610892902907"
+}
