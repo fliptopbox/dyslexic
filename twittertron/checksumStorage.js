@@ -40,7 +40,11 @@ function persistChecksum(key, name, id) {
     const content = serializeCollection(checksums);
     const options = { encoding: 'utf8', flag: 'w' };
 
-    fs.writeFileSync(filename, content, options);
+    try {
+        fs.writeFileSync(filename, content, options);
+    } catch (e) {
+        console.log('Error:', e.stack);
+    }
     return {...checksums};
 }
 
