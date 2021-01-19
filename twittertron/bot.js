@@ -6,19 +6,23 @@
 console.clear();
 
 const twit = require('twit');
+const curl = require('curl');
+// const fetch = require('node-fetch');
 const cliche = require('cliches');
 
 const config = require('./config.js');
 const db = require('./checksumStorage');
-const track = require('./track');
+const { track, ignore, interesting } = require('./track');
 const metadata = require('./metadata');
+const intersection = require('./intersection.js');
 const T = new twit(config);
 
 console.log(track);
 
 const stream = T.stream('statuses/filter', { track });
 
-let i = 0;
+let messageCounter = 0; // inc everytime a cliche comes in.
+const messageModulus = 138; // ie 23 % 5; where 0 triggers a surreal tweet event
 
 // this should come from a persisted register
 
@@ -30,6 +34,7 @@ stream.on('tweet', function (tweet) {
         mentions,
         words,
         screen_name,
+        description,
         chksum,
         lang,
         retweet,
@@ -39,11 +44,6 @@ stream.on('tweet', function (tweet) {
     const reject = [lang !== 'en', exists, retweet].filter((v) => v).length > 0;
 
     if (reject) return;
-    if (!i && hashtags && mentions) {
-        i += 1;
-        // console.log(JSON.stringify(tweet, null, 4));
-        console.log(JSON.stringify(meta, null, 4));
-    }
 
     const sentence = words.join(' ');
     const cliches = cliche.test(sentence);
@@ -51,6 +51,10 @@ stream.on('tweet', function (tweet) {
     if (!cliches) return;
 
     const rehashtags = textToHashTag(sentence, cliches);
+    const filtered = filter(meta);
+    const [cons, pros] = filtered;
+    const total = pros - cons;
+    const promote = pros > 3 || (!cons && pros > 1) || total > 2 || false;
 
     console.log(
         '\n>> (%s) w%s #%s @%s <%s>',
@@ -58,15 +62,80 @@ stream.on('tweet', function (tweet) {
         words.length,
         hashtags.length,
         mentions.length,
-        chksum,
+        `${chksum} ${messageCounter} ${messageModulus}`,
         '\n>> ' + hashtags,
         '\n>> ' + id,
         '\n>> ' + sentence,
-        '\n>> ' + rehashtags
+        '\n>> ' + rehashtags,
+        '\n>> ' + description,
+        '\n>> ' + filtered,
+        '\n== ' + promote
     );
 
+    if (!promote) return;
+
     promoteId({ ...meta, rehashtags });
+    surrealTweet(messageCounter++);
 });
+
+function surrealTweet(n) {
+    if (n % messageModulus !== 0) return;
+
+    const h2 = /<h2>(.*)<\/h2>/gi;
+    const url = 'http://www.madsci.org/cgi-bin/lynn/jardin/SCG';
+
+    curl.get(url, {}, (e, a, html) => {
+        let phrase = html.replace(/\n+/g, ' ').match(h2);
+
+        if (!phrase || !phrase.length) {
+            console.log('Error :(', html);
+            return;
+        }
+
+        phrase = phrase[0].replace(/<[^>]+>/g, '').trim(); //?
+        const status = generateRandomMessage(phrase);
+        const params = { status };
+        const path = 'statuses/update';
+
+        postMessage(path, params);
+    });
+}
+
+function generateRandomMessage(phrase) {
+    const tags = [
+        'WritingCommunity',
+        'DicemanPoetry',
+        'MadnessPassedBy',
+        'SurrealNonSense',
+        'Silliness',
+        'StrangeProes',
+        'RandomThingToSay',
+    ]
+        .filter((s, i) => i === 0 || Math.random() > 0.76)
+        .filter((s) => s)
+        .map((s) => `#${s}`)
+        .join('\n');
+
+    const message = [phrase.trim(), '', '', tags].join('\n');
+
+    return message;
+}
+
+function filter({ text, description }) {
+    const string = `${text} -- ${description}`;
+    const ignored = intersection(ignore, string);
+    const intrested = intersection(interesting, string);
+    const tracking = intersection(track, string);
+
+    if (ignored.length) {
+        console.log('!! ', ignored);
+    }
+    return [
+        //
+        ignored.length,
+        intrested.length + tracking.length,
+    ];
+}
 
 function promoteId({ chksum, rehashtags, screen_name, id, id_str }) {
     if (!db.persistChecksum(chksum, screen_name, id_str, rehashtags)) return;
@@ -93,7 +162,7 @@ function like(id, name) {
         if (e) console.log(e);
     };
 
-    T.post(path, params, callback);
+    postMessage(path, params, callback);
 }
 
 function retweetid(id, name) {
@@ -104,19 +173,18 @@ function retweetid(id, name) {
         if (e) console.log(e);
     };
 
-    T.post(path, params, callback);
+    postMessage(path, params, callback);
+}
 
-    // T.post('statuses/retweet/:id', { id }, function (err, response) {
-    //     if (response) {
-    //         console.log('Retweeted!!!', response);
-    //     }
-    //     // if there was an error while tweeting
-    //     if (err) {
-    //         console.log(
-    //             'Something went wrong while RETWEETING... Duplication maybe...'
-    //         );
-    //     }
-    // });
+function postMessage(path, params, callback) {
+    callback =
+        callback ||
+        function (e) {
+            console.log('<< [%s]', path);
+            if (e) console.log('Twitter Error', e);
+        };
+
+    T.post(path, params, callback);
 }
 
 function textToHashTag(text, phrases) {
