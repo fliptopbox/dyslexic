@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+const pathLastMsg = './lastmessage.tsv';
 const filename = './checksums.tsv';
 const fullpath = path.join(__dirname, filename);
 
@@ -8,6 +9,7 @@ let checksums = initialize();
 
 module.exports = {
     persistChecksum,
+    persistLastTweet,
     parseChecksumData,
     serializeCollection,
     checksumExists,
@@ -30,6 +32,17 @@ function parseChecksumData(tsv) {
         });
 
     return Object.fromEntries(text);
+}
+
+function persistLastTweet(text) {
+    const filename = path.join(__dirname, "./lastmessage.txt");
+    const content = text;
+    const options = { encoding: 'utf8', flag: 'w' };
+    try {
+        fs.writeFileSync(filename, content, options);
+    } catch (e) {
+        console.log('Error:', e.stack);
+    }
 }
 
 function persistChecksum(key, name, id, rehashtags) {

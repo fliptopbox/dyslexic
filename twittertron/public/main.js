@@ -1,4 +1,9 @@
 function getdata() {
+    fetch('/lastmessage.txt')
+        .then((d) => d.text())
+        .then((txt) => {
+            document.querySelector('.message').innerHTML = txt;
+        });
     fetch('/checksums.txt')
         .then((d) => d.text())
         .then((txt) => {

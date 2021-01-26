@@ -22,7 +22,7 @@ console.log(track);
 const stream = T.stream('statuses/filter', { track });
 
 let messageCounter = 0; // inc everytime a cliche comes in.
-const messageModulus = 138; // ie 23 % 5; where 0 triggers a surreal tweet event
+const messageModulus = 789; // ie 23 % 5; where 0 triggers a surreal tweet event
 
 // this should come from a persisted register
 
@@ -78,8 +78,24 @@ stream.on('tweet', function (tweet) {
     surrealTweet(messageCounter++);
 });
 
+function english(text = "") {
+    // Search for English conjunctives
+    //
+    // if the text is english return text
+    // otherwise return falsey value
+    // NOTE: this will fail for short phrases
+
+    const eng = /\b(in|[std]o|can|[io]f|an|as|are|and|will|I|they?|is|m[ey]|your?)\b/ig;
+    const keys = String(text || "")
+        .split(" ")
+        .map((s) => (eng.test(s) ? s : null))
+        .filter((s) => s);
+
+    return keys.length > 1 ? keys : null;
+}
+
 function surrealTweet(n) {
-    if (n % messageModulus !== 0) return;
+    // if (n % messageModulus !== 0) return;
 
     const h2 = /<h2>(.*)<\/h2>/gi;
     const url = 'http://www.madsci.org/cgi-bin/lynn/jardin/SCG';
@@ -93,11 +109,16 @@ function surrealTweet(n) {
         }
 
         phrase = phrase[0].replace(/<[^>]+>/g, '').trim(); //?
+        const isenglish = english(phrase);
+
+        if(!isenglish) return;
+
         const status = generateRandomMessage(phrase);
         const params = { status };
         const path = 'statuses/update';
 
         postMessage(path, params);
+        db.persistLastTweet(phrase);
     });
 }
 
@@ -184,7 +205,7 @@ function postMessage(path, params, callback) {
             if (e) console.log('Twitter Error', e);
         };
 
-    T.post(path, params, callback);
+    // T.post(path, params, callback);
 }
 
 function textToHashTag(text, phrases) {

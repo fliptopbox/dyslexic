@@ -31,3 +31,38 @@ a {
     display: inline-block;
     font-weight: 900;
 }
+
+header {
+    position: relative;
+    width: 50%;
+    margin: auto;
+}
+
+.message {
+    background: white;
+    display: block;
+    border-radius: 4vw;
+    padding: 2.5vw;
+    min-height: 12vh;
+    position: absolute;
+    width: 12vw;
+    left: -10vw;
+    line-height: 0.9;
+    font-family: serif;
+    font-size: 1.6em;
+    top: 6vh;
+    z-index: 1;
+}
+
+.message:after {
+    content: ' ';
+    width: 2vw;
+    height: 2vw;
+    border: 1vw solid white;
+    border-width: 20px 20px 0 0;
+    position: absolute;
+    right: -10px;
+    z-index: 0;
+    transform: rotate(45deg);
+    top: 7vh;
+}
