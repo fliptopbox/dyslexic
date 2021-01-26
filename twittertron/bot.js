@@ -95,7 +95,7 @@ function english(text = "") {
 }
 
 function surrealTweet(n) {
-    // if (n % messageModulus !== 0) return;
+    if (n % messageModulus !== 0) return;
 
     const h2 = /<h2>(.*)<\/h2>/gi;
     const url = 'http://www.madsci.org/cgi-bin/lynn/jardin/SCG';
@@ -205,7 +205,7 @@ function postMessage(path, params, callback) {
             if (e) console.log('Twitter Error', e);
         };
 
-    // T.post(path, params, callback);
+    T.post(path, params, callback);
 }
 
 function textToHashTag(text, phrases) {
