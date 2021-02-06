@@ -14,6 +14,17 @@
             "mode": "source"
           }
         }
+      },
+      {
+        "id": "85e3607059bb753d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "overview.md",
+            "mode": "preview"
+          }
+        }
       }
     ],
     "direction": "vertical"
@@ -87,12 +98,12 @@
   },
   "lastOpenFiles": [
     "overview.md",
-    "cliche.md",
     "emoji.md",
+    "cliche.md",
+    "secret lives of pronouns.md",
     "phononum.md",
     "synonum.md",
     "word-contractions.md",
-    "secret lives of pronouns.md",
     "Untitled.md"
   ]
 }
