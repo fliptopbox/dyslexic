@@ -15,3 +15,7 @@ In addition modern abbreviations (eg WTF) and emojicons (;P) should be treated i
 - [[word-contractions]] utiliy to expand contraction into integer parts eg, do'nt = do not
 - [[emoji]] a utility to identify and replace hieroglyphs with infinitive verbs of phrases
 - [[synonum]] and [[phononum]] colloquial abbreviations and/or synonms eg WTF, LOL or 4q (fuck you), l8r (later), 2mrw (tomorrow)
+
+
+## Kaggle resources
+https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews

@@ -10,21 +10,23 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "overview.md",
+            "file": "phononum.md",
             "mode": "source"
           }
-        }
+        },
+        "group": "2dbfbdcc5ca6de3e"
       },
       {
-        "id": "85e3607059bb753d",
+        "id": "1c77599af9369545",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "overview.md",
-            "mode": "preview"
+            "file": "phononum.md",
+            "mode": "source"
           }
-        }
+        },
+        "group": "2dbfbdcc5ca6de3e"
       }
     ],
     "direction": "vertical"
@@ -80,7 +82,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "overview.md",
+                "file": "phononum.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,13 +99,13 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "overview.md",
-    "emoji.md",
-    "cliche.md",
-    "secret lives of pronouns.md",
     "phononum.md",
+    "Untitled.md",
     "synonum.md",
+    "overview.md",
+    "cliche.md",
     "word-contractions.md",
-    "Untitled.md"
+    "secret lives of pronouns.md",
+    "emoji.md"
   ]
 }
