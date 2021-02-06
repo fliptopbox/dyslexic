@@ -1,0 +1,6 @@
+nltk
+gensim
+pandas
+matplotlib
+numpy
+seaborn
