@@ -1,0 +1,98 @@
+{
+  "main": {
+    "id": "391ab29c8a0cc68a",
+    "type": "split",
+    "children": [
+      {
+        "id": "b741bcde48b01dba",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "overview.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0f3c8d625ee9f9da",
+    "type": "split",
+    "children": [
+      {
+        "id": "b59aa8e49ac8c4f3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ec4af67eea95aab3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "3094f6f288df48ba",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2a912dbdb5f0fe64",
+    "type": "split",
+    "children": [
+      {
+        "id": "121c10983b027853",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a0779a9cf95180ff",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "overview.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "overview.md",
+    "cliche.md",
+    "emoji.md",
+    "phononum.md",
+    "synonum.md",
+    "word-contractions.md",
+    "secret lives of pronouns.md",
+    "Untitled.md"
+  ]
+}
