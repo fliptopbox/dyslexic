@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "phononum.md",
+            "file": "build-a-chatbot-with-python.md.md",
             "mode": "source"
           }
         },
@@ -22,8 +22,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "phononum.md",
-            "mode": "source"
+            "file": "build-a-chatbot-with-python.md.md",
+            "mode": "preview"
           }
         },
         "group": "2dbfbdcc5ca6de3e"
@@ -82,7 +82,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "phononum.md",
+                "file": "build-a-chatbot-with-python.md.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,10 +99,11 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "courses/plural/build-a-chatbot-with-python.md.md",
+    "overview.md",
     "phononum.md",
     "Untitled.md",
     "synonum.md",
-    "overview.md",
     "cliche.md",
     "word-contractions.md",
     "secret lives of pronouns.md",

@@ -17,5 +17,7 @@ In addition modern abbreviations (eg WTF) and emojicons (;P) should be treated i
 - [[synonum]] and [[phononum]] colloquial abbreviations and/or synonms eg WTF, LOL or 4q (fuck you), l8r (later), 2mrw (tomorrow)
 
 
-## Kaggle resources
-https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews
+## dataset resources
+- https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews
+- https://data.world/crowdflower/apple-twitter-sentiment/workspace/file?filename=Apple-Twitter-Sentiment-DFE.csv
+- https://pubmed.ncbi.nlm.nih.gov/
