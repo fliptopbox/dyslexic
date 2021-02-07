@@ -25,4 +25,11 @@ PubMed is a free search engine accessing primarily the MEDLINE database of refer
 
 https://pubmed.ncbi.nlm.nih.gov
 
-_Please title, describe and link each resource_
+### English language
+
+A bunch of links related to sentence construction
+
+-   Sentence structure: https://www.thoughtco.com/sentence-parts-and-sentence-structures-1689671
+-   https://www.englishclub.com/grammar/sentence/sentence-structure.htm
+-   Complex sentences: https://grammar.yourdictionary.com/grammar/sentences/complex-sentences.html
+-   WordNet dictionary: https://wordnet.princeton.edu/download/current-version
