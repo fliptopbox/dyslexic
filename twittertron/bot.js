@@ -9,6 +9,7 @@ const twit = require('twit');
 const curl = require('curl');
 // const fetch = require('node-fetch');
 const cliche = require('cliches');
+const english = require("./english");
 
 const config = require('./config.js');
 const db = require('./checksumStorage');
@@ -77,22 +78,6 @@ stream.on('tweet', function (tweet) {
     promoteId({ ...meta, rehashtags });
     surrealTweet(messageCounter++);
 });
-
-function english(text = "") {
-    // Search for English conjunctives
-    //
-    // if the text is english return text
-    // otherwise return falsey value
-    // NOTE: this will fail for short phrases
-
-    const eng = /\b(in|[std]o|can|[io]f|an|as|are|and|will|I|they?|is|m[ey]|your?)\b/ig;
-    const keys = String(text || "")
-        .split(" ")
-        .map((s) => (eng.test(s) ? s : null))
-        .filter((s) => s);
-
-    return keys.length > 1 ? keys : null;
-}
 
 function surrealTweet(n) {
     if (n % messageModulus !== 0) return;
