@@ -33,7 +33,7 @@ function save() {
 
 function sentence() {
     n += 1;
-    const u = sentence.length;
+    const u = sentences.length;
     const i = n % u;
     return sentences[i];
 }
