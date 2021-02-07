@@ -8,9 +8,17 @@ const filename = './random.txt';
 const fullpath = path.join(__dirname, filename);
 
 const text = fs.readFileSync(fullpath, 'utf8');
-const sentences = Array.from(new Set(text.split('\n')));
-const u = sentences.length;
-let n = (Math.random() * u) >> 0;
+const sentences = unique(text);
+let n = (Math.random() * sentences.length) >> 0;
+
+function unique(string) {
+   const array = string
+      .trim()
+      .split('\n')
+      .filter(s => /^\w+/g.test(s));
+
+    return Array.from(new Set(array));
+}
 
 // replace the record set with unique rows only
 function save() {
@@ -25,6 +33,7 @@ function save() {
 
 function sentence() {
     n += 1;
+    const u = sentence.length;
     const i = n % u;
     return sentences[i];
 }
@@ -42,4 +51,5 @@ module.exports = {
     sentence,
     current,
     save,
+   unique
 };
