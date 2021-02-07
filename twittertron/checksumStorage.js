@@ -15,6 +15,7 @@ module.exports = {
     checksumExists,
     loadChecksumData,
     checksumData,
+    appendToFile,
 };
 
 function checksumData() {
@@ -34,15 +35,21 @@ function parseChecksumData(tsv) {
     return Object.fromEntries(text);
 }
 
-function persistLastTweet(text) {
-    const filename = path.join(__dirname, "./lastmessage.txt");
-    const content = text;
-    const options = { encoding: 'utf8', flag: 'w' };
+function appendToFile(text, filename = "plaintext.txt", append = true) {
+    const abspath = path.join(__dirname, `./${filename}`);
+    const flag = append ? "a" : "w";
+    const options = { encoding: 'utf8', flag };
+    const fn = function(a) { console.log(a); }
+
     try {
-        fs.writeFileSync(filename, content, options);
+        fs.writeFile(abspath, text, options, fn);
     } catch (e) {
         console.log('Error:', e.stack);
     }
+}
+
+function persistLastTweet(text) {
+    return appendToFile(text, "lastmessage.txt", false);
 }
 
 function persistChecksum(key, name, id, rehashtags) {
