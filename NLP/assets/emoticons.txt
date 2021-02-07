@@ -1,0 +1,222 @@
+# Sideways Latin-only emoticons
+#
+# Data schema:
+# ----------------------------------------------------------------------------
+# Empty line - start of block - RegEx ^$
+# ASCII character icon - one per line - RegEx: ^\S\S\+$
+# Emoji unicode character string as Array literal eg. [😁] - RegEx: ^[\S*$
+# Description sentence - end of block
+
+:‑)
+:)
+:-]
+:]
+:-3
+:3
+:->
+:>
+8-)
+8)
+:-}
+:}
+:o)
+:c)
+:^)
+=]
+=)
+[☺️🙂😊😀😁]
+Smiley or happy face.[4][5][6]
+
+:‑D
+:D
+8‑D
+8D
+x‑D
+xD
+X‑D
+XD
+=D
+=3
+B^D
+c:
+C:
+:-))
+[😃😄😆😍]
+Laughing,[4] big grin,[5][6] laugh with glasses,[7] or wide-eyed surprise[8]
+
+:‑(
+:(
+:‑c
+:c
+:‑<
+:<
+:‑[
+:[
+:-||
+>:[
+:{
+:@
+:(
+;(
+[☹️🙁😠😡😞😟😣😖]
+Frown,[4][5][6] sad,[9] angry,[7] pouting
+
+:'‑(
+:'(
+[😢😭]
+Crying[9]
+
+:'‑)
+:')
+[😂]
+Tears of happiness[9]
+
+D‑':
+D:<
+D:
+D8
+D;
+D=
+DX
+[😨😧😦😱😫😩]
+Horror, disgust, sadness, great dismay[5][6] (right to left)
+
+:‑O
+:O
+:‑o
+:o
+:-0
+8‑0
+>:O
+[😮😯😲]
+Surprise,[3] shock,[4][10] yawn[11]
+
+:-*
+:*
+:×
+[😗😙😚😘😍]
+Kiss[4]
+
+;‑)
+;)
+*-)
+*)
+;‑]
+;]
+;^)
+:‑,
+;D
+[😉😜😘]
+Wink,[4][5][6] smirk[10][11]
+
+:‑P
+:P
+X‑P
+XP
+x‑p
+xp
+:‑p
+:p
+:‑Þ
+:Þ
+:‑þ
+:þ
+:‑b
+:b
+d:
+=p
+>:P
+[😛😝😜🤑]
+Tongue sticking out, cheeky/playful,[4] blowing a raspberry
+
+:‑/
+:/
+:‑.
+>:\
+>:/
+:\
+=/
+=\
+:L
+=L
+:S
+[🤔😕😟]
+Skeptical, annoyed, undecided, uneasy, hesitant[4]
+
+:‑|
+:|
+[😐😑]
+Straight face[5] no expression, indecision[9]
+
+:$
+://)
+://3
+[😳😞😖]
+Embarrassed,[6] blushing[7]
+
+:‑X
+:X
+:‑#
+:#
+:‑&
+:&
+[🤐😶]
+Sealed lips or wearing braces,[4] tongue-tied[9]
+
+O:‑)
+O:)
+0:‑3
+0:3
+0:‑)
+0:)
+0;^)
+[😇👼]
+Angel,[4][5][10] saint,[9] innocent
+
+>:‑)
+:)
+}:‑)
+}:)
+3:‑)
+3:)
+>;)
+>:3
+;3
+[😈]
+Evil,[5] devilish[9]
+
+|;‑)
+|‑O
+[😎😪]
+Cool,[9] bored/yawning[10]
+
+:‑J
+[😏😒]
+Tongue-in-cheek[12]
+
+#‑)
+[]
+Partied all night[9]
+
+%‑)
+%)
+[😵😕🤕]
+Drunk,[9] confused
+
+:‑###..
+:###..
+[🤒😷🤢]
+Being sick[9]
+
+<:‑|
+[]
+Dumb, dunce-like[10]
+
+',:-|
+',:-l
+[🤨]
+Scepticism, disbelief, or disapproval[13][14]
+
+:E
+[😬]
+Grimacing, nervous, awkward[15]
