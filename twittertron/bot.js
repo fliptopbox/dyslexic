@@ -6,10 +6,9 @@
 console.clear();
 
 const twit = require('twit');
-const curl = require('curl');
 const cliche = require('cliches');
-const { sentence } = require('./getRandomSentence');
-
+const textToHashTag = require('./textToHashTag');
+const randomTextMessage = require('./randomTextMessage');
 const config = require('./config.js');
 const db = require('./checksumStorage');
 const { track, ignore, interesting } = require('./track');
@@ -77,43 +76,27 @@ stream.on('tweet', function (tweet) {
     );
 
     if (!promote) return;
-    promoteId({ ...meta, rehashtags });
+    promoteId({ ...meta, rehashtags, phrase });
 
-    if (messageCounter % messageModulus !== 0) return;
+    if (++messageCounter % messageModulus !== 0) return;
     surrealTweet();
-
-    messageCounter += 1;
 });
 
 function surrealTweet() {
-    const phrase = sentence();
-    const status = generateRandomMessage(phrase);
+    const status = randomTextMessage();
     const params = { status };
     const path = 'statuses/update';
 
-    console.log("Generate Surreal Tweet:\n%s\n%s", phrase, new Date().toString());
+    console.log(
+        'Generate Surreal Tweet:\n%s\n%s',
+        phrase,
+        new Date().toString()
+    );
 
     postMessage(path, params);
-    db.persistLastTweet(phrase);
-}
+    db.persistLastTweet(status);
 
-function generateRandomMessage(phrase) {
-    const tags = [
-        'DicemanPoetry',
-        'MadnessPassedBy',
-        'SurrealNonSense',
-        'Silliness',
-        'StrangeProes',
-        'RandomThingToSay',
-    ].sort(() => Math.random() - 0.5);
-
-    const x = tags.length / 2;
-    const n = x - ((Math.random() * x) >> 0);
-    const array = tags.slice(-n);
-    const items = ['WritingCommunity', ...array].map((s) => `#${s}`);
-    const message = [phrase.trim(), '', '', ...items].join('\n');
-
-    return message;
+    return status;
 }
 
 function filter({ text, description }) {
@@ -132,8 +115,9 @@ function filter({ text, description }) {
     ];
 }
 
-function promoteId({ chksum, rehashtags, screen_name, id, id_str }) {
-    if (!db.persistChecksum(chksum, screen_name, id_str, rehashtags)) return;
+function promoteId(object) {
+    const { chksum, screen_name, id, id_str } = object;
+    if (!db.persistChecksum(object)) return;
 
     const [l, r] = [random(30, 10), random(90, 30)];
     console.log('Persisted %s %s\nLike: %s\nRe: %s\n\n', chksum, id, l, r);
@@ -179,20 +163,5 @@ function postMessage(path, params, callback) {
             if (e) console.log('Twitter Error', e);
         };
 
-    T.post(path, params, callback);
-}
-
-function textToHashTag(text, phrases) {
-    const sentences = phrases.map((s) => {
-        // remap the re phrase to the used text
-        const re = new RegExp(`(${s})`, 'i');
-        return text
-            .match(re)[0]
-            .toLowerCase()
-            .split(/\s+/g)
-            .map((w) => w.replace(/./, (c) => c.toUpperCase()))
-            .join('');
-    });
-
-    return sentences;
+    //T.post(path, params, callback);
 }
