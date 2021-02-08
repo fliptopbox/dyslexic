@@ -23,4 +23,3 @@ function getdata() {
 
 getdata();
 
-document.querySelector(".lastmodified").innerHTML = document.lastModified;
