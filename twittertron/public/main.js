@@ -10,16 +10,30 @@ function getdata() {
             const array = txt
                 .split('\n')
                 .reverse()
-                .map((s, i) => `${i}\t${s}`);
+                .map((s, i) => {
+                    const cells = s.split('\t');
+                    const [chk, id, user, hashes, ts, text] = cells;
+                    const [wd, mm, dd, yyyy, time] = new Date().toString().split(/\s/g);
+                    const row = `
+                        <td>
+                            <strong> ${i} - ${chk} - <a href="https://twitter.com/${user}">${user}</a> - ${time} - ${hashes.replace(/,/g, " ")} </strong>
+                            <br>
+                            ${text || ""}
+                        </td>
+                    `;
+                    console.log(111, row)
+                    return `<tr>${row}</tr>`;
+                });
 
-            const content = `
-                    Updated: ${new Date().toISOString()}
-                    \n${array.join('\n')}
-                `.trim();
-            document.querySelector('pre').innerHTML = content;
+            // const content = `
+            //         Updated: ${new Date().toISOString()}
+            //         \n${array.join('\n')}
+            //     `.trim();
+
+            const content = array.join('\n');
+            document.querySelector('table').innerHTML = content;
         });
-    setTimeout(getdata, 5000)
+    setTimeout(getdata, 5000);
 }
 
 getdata();
-
