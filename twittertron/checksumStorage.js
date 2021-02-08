@@ -28,8 +28,8 @@ function parseChecksumData(tsv) {
         .split('\n')
         .filter((s) => !/^#/.test(s))
         .map((line) => {
-            const [key, name, id, tags = ""] = line.split(/\s+/);
-            return [key, { key, name, id, tags }];
+            const [ chksum, id, screen_name, rehashtags, ts, phrase ] = line.split(/\t/);
+            return [chksum, { chksum, screen_name, id, rehashtags, ts, phrase}];
         });
 
     return Object.fromEntries(text);
@@ -108,5 +108,6 @@ function loadChecksumData() {
 function initialize() {
     const textdata = loadChecksumData();
     const collection = parseChecksumData(textdata);
+    console.log(1, collection)
     return collection || {};
 }
