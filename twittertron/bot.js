@@ -163,5 +163,5 @@ function postMessage(path, params, callback) {
             if (e) console.log('Twitter Error', e);
         };
 
-    //T.post(path, params, callback);
+    T.post(path, params, callback);
 }

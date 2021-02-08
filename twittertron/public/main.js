@@ -21,14 +21,8 @@ function getdata() {
                             ${text || ""}
                         </td>
                     `;
-                    console.log(111, row)
                     return `<tr>${row}</tr>`;
                 });
-
-            // const content = `
-            //         Updated: ${new Date().toISOString()}
-            //         \n${array.join('\n')}
-            //     `.trim();
 
             const content = array.join('\n');
             document.querySelector('table').innerHTML = content;
