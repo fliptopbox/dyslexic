@@ -7,9 +7,8 @@ console.clear();
 
 const twit = require('twit');
 const curl = require('curl');
-// const fetch = require('node-fetch');
 const cliche = require('cliches');
-const english = require("./english");
+const { sentence } = require('./getRandomSentence');
 
 const config = require('./config.js');
 const db = require('./checksumStorage');
@@ -26,6 +25,7 @@ let messageCounter = 0; // inc everytime a cliche comes in.
 const messageModulus = 789; // ie 23 % 5; where 0 triggers a surreal tweet event
 
 // this should come from a persisted register
+console.log(stream);
 
 stream.on('tweet', function (tweet) {
     const meta = metadata(tweet);
@@ -46,12 +46,15 @@ stream.on('tweet', function (tweet) {
 
     if (reject) return;
 
-    const sentence = words.join(' ');
-    const cliches = cliche.test(sentence);
+    const phrase = words.join(' ');
+    const cliches = cliche.test(phrase);
+
+    // a dev helper to see stream data
+    // console.log('Candidate message', screen_name, messageCounter, cliches);
 
     if (!cliches) return;
 
-    const rehashtags = textToHashTag(sentence, cliches);
+    const rehashtags = textToHashTag(phrase, cliches);
     const filtered = filter(meta);
     const [cons, pros] = filtered;
     const total = pros - cons;
@@ -66,7 +69,7 @@ stream.on('tweet', function (tweet) {
         `${chksum} ${messageCounter} ${messageModulus}`,
         '\n>> ' + hashtags,
         '\n>> ' + id,
-        '\n>> ' + sentence,
+        '\n>> ' + phrase,
         '\n>> ' + rehashtags,
         '\n>> ' + description,
         '\n>> ' + filtered,
@@ -74,55 +77,41 @@ stream.on('tweet', function (tweet) {
     );
 
     if (!promote) return;
-
     promoteId({ ...meta, rehashtags });
-    surrealTweet(messageCounter++);
+
+    if (messageCounter % messageModulus !== 0) return;
+    surrealTweet();
+
+    messageCounter += 1;
 });
 
-function surrealTweet(n) {
-    if (n % messageModulus !== 0) return;
+function surrealTweet() {
+    const phrase = sentence();
+    const status = generateRandomMessage(phrase);
+    const params = { status };
+    const path = 'statuses/update';
 
-    const h2 = /<h2>(.*)<\/h2>/gi;
-    const url = 'http://www.madsci.org/cgi-bin/lynn/jardin/SCG';
+    console.log("Generate Surreal Tweet:\n%s\n%s", phrase, new Date().toString());
 
-    curl.get(url, {}, (e, a, html) => {
-        let phrase = html.replace(/\n+/g, ' ').match(h2);
-
-        if (!phrase || !phrase.length) {
-            console.log('Error :(', html);
-            return;
-        }
-
-        phrase = phrase[0].replace(/<[^>]+>/g, '').trim(); //?
-        const isenglish = english(phrase);
-
-        if(!isenglish) return;
-
-        const status = generateRandomMessage(phrase);
-        const params = { status };
-        const path = 'statuses/update';
-
-        postMessage(path, params);
-        db.persistLastTweet(phrase);
-    });
+    postMessage(path, params);
+    db.persistLastTweet(phrase);
 }
 
 function generateRandomMessage(phrase) {
     const tags = [
-        'WritingCommunity',
         'DicemanPoetry',
         'MadnessPassedBy',
         'SurrealNonSense',
         'Silliness',
         'StrangeProes',
         'RandomThingToSay',
-    ]
-        .filter((s, i) => i === 0 || Math.random() > 0.76)
-        .filter((s) => s)
-        .map((s) => `#${s}`)
-        .join('\n');
+    ].sort(() => Math.random() - 0.5);
 
-    const message = [phrase.trim(), '', '', tags].join('\n');
+    const x = tags.length / 2;
+    const n = x - ((Math.random() * x) >> 0);
+    const array = tags.slice(-n);
+    const items = ['WritingCommunity', ...array].map((s) => `#${s}`);
+    const message = [phrase.trim(), '', '', ...items].join('\n');
 
     return message;
 }
