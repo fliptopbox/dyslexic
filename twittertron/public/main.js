@@ -13,7 +13,7 @@ function getdata() {
                 .map((s, i) => {
                     const cells = s.split('\t');
                     const [chk, id, user, hashes, ts, text] = cells;
-                    const [wd, mm, dd, yyyy, time] = new Date(ts).toString().split(/\s/g);
+                    const [wd, mm, dd, yyyy, time] = new Date(Number(ts)).toString().split(/\s/g);
                     const row = `
                         <td>
                             <strong> ${i} - ${chk} - <a href="https://twitter.com/${user}">${user}</a> - ${time} - ${hashes.replace(/,/g, " ")} </strong>

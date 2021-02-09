@@ -29,7 +29,7 @@ function parseChecksumData(tsv) {
         .filter((s) => !/^#/.test(s))
         .map((line) => {
             const [ chksum, id, screen_name, rehashtags, ts, phrase ] = line.split(/\t/);
-            return [chksum, { chksum, screen_name, id, rehashtags, ts, phrase}];
+            return [chksum, { chksum, id, screen_name, rehashtags, ts, phrase}];
         });
 
     return Object.fromEntries(text);
@@ -53,7 +53,7 @@ function persistLastTweet(text) {
 }
 
 function persistChecksum(object) {
-    const {chksum, screen_name, id, rehashtags, phrase} = object;
+    const {chksum, id, screen_name, rehashtags, phrase} = object;
 
     if (checksumExists(chksum)) return;
 
@@ -61,8 +61,6 @@ function persistChecksum(object) {
     const ts = new Date().valueOf();
     const append = { chksum, id, screen_name, tags, ts, phrase  };
     checksums[chksum] = append;
-
-    console.log(1, append);
 
     const content = serializeCollection(checksums);
     const options = { encoding: 'utf8', flag: 'w' };
@@ -108,6 +106,6 @@ function loadChecksumData() {
 function initialize() {
     const textdata = loadChecksumData();
     const collection = parseChecksumData(textdata);
-    console.log(1, collection)
+    console.log("Loading collection", textdata.length)
     return collection || {};
 }

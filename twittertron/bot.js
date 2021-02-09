@@ -15,6 +15,7 @@ const { track, ignore, interesting } = require('./track');
 const metadata = require('./metadata');
 const intersection = require('./intersection.js');
 const T = new twit(config);
+const dev = !process.env.PORT ? true : false;
 
 console.log(track);
 
@@ -24,7 +25,7 @@ let messageCounter = 0; // inc everytime a cliche comes in.
 const messageModulus = 789; // ie 23 % 5; where 0 triggers a surreal tweet event
 
 // this should come from a persisted register
-console.log(stream);
+if(dev) console.log(stream);
 
 stream.on('tweet', function (tweet) {
     const meta = metadata(tweet);
@@ -49,7 +50,7 @@ stream.on('tweet', function (tweet) {
     const cliches = cliche.test(phrase);
 
     // a dev helper to see stream data
-    // console.log('Candidate message', screen_name, messageCounter, cliches);
+    if (dev) console.log('Candidate message', screen_name, messageCounter, cliches);
 
     if (!cliches) return;
 
@@ -156,6 +157,8 @@ function retweetid(id, name) {
 }
 
 function postMessage(path, params, callback) {
+    if (dev) return;
+
     callback =
         callback ||
         function (e) {
