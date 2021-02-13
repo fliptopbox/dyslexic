@@ -28,8 +28,8 @@ function parseChecksumData(tsv) {
         .split('\n')
         .filter((s) => !/^#/.test(s))
         .map((line) => {
-            const [key, name, id, tags = ""] = line.split(/\s+/);
-            return [key, { key, name, id, tags }];
+            const [ chksum, id, screen_name, rehashtags, ts, phrase ] = line.split(/\t/);
+            return [chksum, { chksum, id, screen_name, rehashtags, ts, phrase}];
         });
 
     return Object.fromEntries(text);
@@ -52,11 +52,15 @@ function persistLastTweet(text) {
     return appendToFile(text, "lastmessage.txt", false);
 }
 
-function persistChecksum(key, name, id, rehashtags) {
-    if (checksumExists(key)) return;
+function persistChecksum(object) {
+    const {chksum, id, screen_name, rehashtags, phrase} = object;
+
+    if (checksumExists(chksum)) return;
 
     const tags = rehashtags.join(",")
-    checksums[key] = { key, id, name, tags };
+    const ts = new Date().valueOf();
+    const append = { chksum, id, screen_name, tags, ts, phrase  };
+    checksums[chksum] = append;
 
     const content = serializeCollection(checksums);
     const options = { encoding: 'utf8', flag: 'w' };
@@ -78,8 +82,9 @@ function serializeCollection(collection, tail = 300) {
 
     const array = entries
         .map(([_, object]) => {
-            const { id, name, key, tags } = object;
-            return `${key}\t${name}\t${id}\t${tags}`;
+            const entries = Object.entries(object);
+            const values = entries.map(([_,v]) => v || "-");
+            return values.join("\t");
         })
         .join('\n');
 
@@ -101,5 +106,6 @@ function loadChecksumData() {
 function initialize() {
     const textdata = loadChecksumData();
     const collection = parseChecksumData(textdata);
+    console.log("Loading collection", textdata.length)
     return collection || {};
 }

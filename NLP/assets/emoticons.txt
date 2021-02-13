@@ -6,6 +6,10 @@
 # ASCII character icon - one per line - RegEx: ^\S\S\+$
 # Emoji unicode character string as Array literal eg. [😁] - RegEx: ^[\S*$
 # Description sentence - end of block
+# 
+# https://www.unicode.org/Public/13.0.0/ucd/emoji/emoji-data.txt 
+# https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes
+#
 
 :‑)
 :)
@@ -25,7 +29,7 @@
 =]
 =)
 [☺️🙂😊😀😁]
-Smiley or happy face.[4][5][6]
+Smiley or happy face.
 
 :‑D
 :D
@@ -42,7 +46,7 @@ c:
 C:
 :-))
 [😃😄😆😍]
-Laughing,[4] big grin,[5][6] laugh with glasses,[7] or wide-eyed surprise[8]
+Laughing, big grin, laugh with glasses, or wide-eyed surprise
 
 :‑(
 :(
@@ -59,17 +63,17 @@ Laughing,[4] big grin,[5][6] laugh with glasses,[7] or wide-eyed surprise[8]
 :(
 ;(
 [☹️🙁😠😡😞😟😣😖]
-Frown,[4][5][6] sad,[9] angry,[7] pouting
+Frown, sad, angry, pouting
 
 :'‑(
 :'(
 [😢😭]
-Crying[9]
+Crying
 
 :'‑)
 :')
 [😂]
-Tears of happiness[9]
+Tears of happiness
 
 D‑':
 D:<
@@ -79,7 +83,7 @@ D;
 D=
 DX
 [😨😧😦😱😫😩]
-Horror, disgust, sadness, great dismay[5][6] (right to left)
+Horror, disgust, sadness, great dismay (right to left)
 
 :‑O
 :O
@@ -89,13 +93,13 @@ Horror, disgust, sadness, great dismay[5][6] (right to left)
 8‑0
 >:O
 [😮😯😲]
-Surprise,[3] shock,[4][10] yawn[11]
+Surprise, shock, yawn
 
 :-*
 :*
 :×
 [😗😙😚😘😍]
-Kiss[4]
+Kiss
 
 ;‑)
 ;)
@@ -107,7 +111,7 @@ Kiss[4]
 :‑,
 ;D
 [😉😜😘]
-Wink,[4][5][6] smirk[10][11]
+Wink, smirk
 
 :‑P
 :P
@@ -127,7 +131,7 @@ d:
 =p
 >:P
 [😛😝😜🤑]
-Tongue sticking out, cheeky/playful,[4] blowing a raspberry
+Tongue sticking out, cheeky/playful, blowing a raspberry
 
 :‑/
 :/
@@ -141,18 +145,18 @@ Tongue sticking out, cheeky/playful,[4] blowing a raspberry
 =L
 :S
 [🤔😕😟]
-Skeptical, annoyed, undecided, uneasy, hesitant[4]
+Skeptical, annoyed, undecided, uneasy, hesitant
 
 :‑|
 :|
 [😐😑]
-Straight face[5] no expression, indecision[9]
+Straight face no expression, indecision
 
 :$
 ://)
 ://3
 [😳😞😖]
-Embarrassed,[6] blushing[7]
+Embarrassed, blushing
 
 :‑X
 :X
@@ -161,7 +165,7 @@ Embarrassed,[6] blushing[7]
 :‑&
 :&
 [🤐😶]
-Sealed lips or wearing braces,[4] tongue-tied[9]
+Sealed lips or wearing braces, tongue-tied
 
 O:‑)
 O:)
@@ -171,7 +175,7 @@ O:)
 0:)
 0;^)
 [😇👼]
-Angel,[4][5][10] saint,[9] innocent
+Angel, saint, innocent
 
 >:‑)
 :)
@@ -183,40 +187,40 @@ Angel,[4][5][10] saint,[9] innocent
 >:3
 ;3
 [😈]
-Evil,[5] devilish[9]
+Evil, devilish
 
 |;‑)
 |‑O
 [😎😪]
-Cool,[9] bored/yawning[10]
+Cool, bored/yawning
 
 :‑J
 [😏😒]
-Tongue-in-cheek[12]
+Tongue-in-cheek
 
 #‑)
 []
-Partied all night[9]
+Partied all night
 
 %‑)
 %)
 [😵😕🤕]
-Drunk,[9] confused
+Drunk, confused
 
 :‑###..
 :###..
 [🤒😷🤢]
-Being sick[9]
+Being sick
 
 <:‑|
 []
-Dumb, dunce-like[10]
+Dumb, dunce-like
 
 ',:-|
 ',:-l
 [🤨]
-Scepticism, disbelief, or disapproval[13][14]
+Scepticism, disbelief, or disapproval
 
 :E
 [😬]
-Grimacing, nervous, awkward[15]
+Grimacing, nervous, awkward

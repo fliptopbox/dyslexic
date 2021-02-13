@@ -6,21 +6,13 @@
       {
         "id": "1c77599af9369545",
         "type": "leaf",
+        "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "resources.md",
-            "mode": "source"
+            "file": "phononum.md",
+            "mode": "preview"
           }
-        }
-      },
-      {
-        "id": "70defd2db99cafd8",
-        "type": "leaf",
-        "active": true,
-        "state": {
-          "type": "graph",
-          "state": {}
         }
       }
     ],
@@ -78,6 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "phononum.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,15 +87,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "resources.md",
+    "phononum.md",
     "emoji.md",
+    "Untitled.md",
+    "resources.md",
     "sentence-structure.md",
     "overview.md",
     "cliche.md",
     "build-a-chatbot-with-python.md.md",
     "courses/plural/build-a-chatbot-with-python.md.md",
-    "phononum.md",
-    "Untitled.md",
     "synonum.md"
   ]
 }
