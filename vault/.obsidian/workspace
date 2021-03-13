@@ -10,8 +10,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "phononum.md",
-            "mode": "preview"
+            "file": "gutenberg press.md",
+            "mode": "source"
           }
         }
       }
@@ -54,7 +54,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 234
+    "width": 265,
+    "collapsed": true
   },
   "right": {
     "id": "2a912dbdb5f0fe64",
@@ -70,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "phononum.md",
+                "file": "gutenberg press.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,15 +88,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "phononum.md",
-    "emoji.md",
+    "gutenberg press.md",
     "Untitled.md",
     "resources.md",
-    "sentence-structure.md",
+    "Phonetic-Based Microtext Normalizationfor Twitter Sentiment Analysis.md",
     "overview.md",
+    "emoji.md",
     "cliche.md",
-    "build-a-chatbot-with-python.md.md",
-    "courses/plural/build-a-chatbot-with-python.md.md",
+    "oxymoron.md",
+    "word-contractions.md",
     "synonum.md"
   ]
 }

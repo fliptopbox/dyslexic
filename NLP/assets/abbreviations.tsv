@@ -1,16 +1,21 @@
 #
+# acronym (tab) definition
+#
+# The definition should be text that could be used
+# as a standalone replacement of the acronym as used
+# in a sentence. Should not contain "meaning"
+#
+# These are too ambigious to replace mechanically:
+#
+# - AT	At your terminal
+# - ;S	Gentle warning, like “Hmm? What did you say?”
+# - ?	I don't understand what you mean
 #
 #
-#
-#
-#
-#
-s	Meaning “smile”
-w	Meaning “wink”
-.02	My (or your) two cents worth
+.02	My two cents worth
 10Q	Thank you
 10X	Thanks
-121	One-to-one (private chat initiation)
+121	One-to-one
 1337	Leet, meaning ‘elite'
 143	I love you
 1432	I love you too
@@ -19,44 +24,38 @@ w	Meaning “wink”
 1CE	Once
 1DR	I wonder
 1NAM	One in a million
-2	Meaning “to” in SMS
-2p	My 2 opinion
-20	Meaning “location”
+20	location
 2B	To be
 2EZ	Too easy
 2G2BT	Too good to be true
 2M2H	Too much to handle
-2M2H	Too much too handle
 2MI	Too much information
 2MOR	Tomorrow
 2MORO	Tomorrow
 2N8	Tonight
 2NTE	Tonight
-4	Short for “for” in SMS
+2p	My 2 opinion
 404	I don't know
-411	Meaning ‘information'
-411	Meaning “information”
+411	information
 420	Lets get high
-420	Meaning “Marijuana”
-459	Means I love you (ILY is 459 using keypad numbers)
+420	Marijuana
+459	Means I love you
 4AO	For adults only
 4COL	For crying out loud
 4EAE	Forever and ever
 4EVA	Forever
 4NR	Foreigner
 4SALE	For sale
-511	Too much information (more than 411)
-555	Sobbing, crying. (Mandarin Chinese txt msgs)
-55555	Crying your eyes out (Mandarin Chinese txt msgs)
+511	Too much information
+555	Sobbing, crying.
+55555	Crying your eyes out
 6Y	Sexy
 7K	Sick
-81	Meaning Hells Angels (H=8th letter of alphabet, A=1st letter of alphabet)
-831	I love you (8 letters, 3 words, 1 meaning)
+81	Hells Angels
+831	I love you
 86	Over
 88	Hugs and kisses
 9	Parent is watching
-;S	Gentle warning, like “Hmm? What did you say?”
-?	I don't understand what you mean
 ?4U	I have a question for you
 @TEOTD	At the end of the day
 A/N	Author's note
@@ -71,24 +70,24 @@ AAMOI	As a matter of interest
 AAP	Always a pleasure
 AAR	At any rate
 AAS	Alive and smiling
-AASHTA	As always, Sheldon has the answer (Bike mechanic Sheldon Brown)
+AASHTA	As always, Sheldon has the answer
 AATK	Always at the keyboard
 AAYF	As always, your friend
-ABBR	Meaning abbreviation
+ABBR	abbreviation
 ABC	Already been chewed
 ABD	Already been done
 ABT	About
-ABT2	Meaning ‘About to'
-ABTA	Meaning Good-bye (signoff)
+ABT2	About to
+ABTA	Good-bye
 ABU	All bugged up
 AC	Acceptable content
 ACC	Anyone can come
 ACD	ALT / CONTROL / DELETE
-ACDNT	Accident (e-mail, Government)
-ACE	Meaning marijuana cigarette
+ACDNT	Accident
+ACE	marijuana cigarette
 ACK	Acknowledge
-ACPT	Accept (e-mail, Government)
-ACQSTN	Acquisition (e-mail, Government)
+ACPT	Accept
+ACQSTN	Acquisition
 ADAD	Another day, another dollar
 ADBB	All done, bye-bye
 ADD	Address
@@ -96,7 +95,7 @@ ADDY	Address
 ADIH	Another day in hell
 ADIP	Another day in paradise
 ADMIN	Administrator
-ADMINR	Administrator (Government)
+ADMINR	Administrator
 ADN	Any day now
 ADR	Address
 AEAP	As early as possible
@@ -122,7 +121,7 @@ AITR	Adult in the room
 AKA	Also known as
 ALCON	All concerned
 ALOL	Actually laughing out loud
-AMA	Ask me anything (Reddit)
+AMA	Ask me anything
 AMAP	As much as possible
 AMBW	All my best wishes
 AML	All my love
@@ -134,20 +133,18 @@ AOYP	Angel on your pillow
 APAC	All praise and credit
 APP	Application
 APP	Appreciate
-AQAP	As quick (or quiet) as possible
-ARC	Archive (compressed files)
-ARE	Acronym rich environment
+AQAP	As quick as possible
+ARC	Archive
 ARG	Argument
 ASAP	As soon as possible
 ASIG	And so it goes
 ASL	Age/sex/location
 ASLA	Age/sex/location/availability
-AT	At your terminal
 ATB	All the best
 ATEOTD	At the end of the day
 ATM	At the moment
 ATSITS	All the stars in the sky
-ATSL	Along the same line (or lines)
+ATSL	Along the same line
 AWC	After awhile crocodile
 AWESO	Awesome
 AWOL	Absent without leave
@@ -163,36 +160,34 @@ AYV	Are you vertical?
 AYW	As you want / As you wish
 AYW	As you were
 AZN	Asian
-B	Back
-B	Be
 B&	Banned
 B-DAY	Birthday
 B/C	Because
 B/F	Boyfriend
-B/G	Background (personal information request)
+B/G	Background
 B2B	Business-to-business
 B2C	Business-to-consumer
 B2W	Back to work
 B4	Before
 B4N	Bye for now
-B8	Bait (person teased or joked with, or under-aged person/teen)
+B8	Bait
 B9	Boss is watching
 BA	Bad a
+BAE	Babe
 BAE	Before anyone else
-BAE	Meaning Babe or baby
 BAFO	Best and final offer
 BAG	Busting a gut
 BAK	Back at keyboard
 BAM	Below average mentality
 BAMF	Bad a mother f
 BAO	Be aware of
-BAS	Big ‘butt' smile
-BASIC	Meaning anything mainstream
+BAS	Big ass smile
+BASIC	mainstream
 BASOR	Breathing a sigh of relief
 BAU	Business as usual
 BAY	Back at ya
+BB	Baby
 BB	Be back
-BB	Bebi / Baby (Spanish SMS)
 BB	Big brother
 BBC	Big bad challenge
 BBIAB	Be back in a bit
@@ -217,12 +212,12 @@ BF	Best friend
 BF	Boyfriend
 BF	Brain fart
 BFAW	Best friend at work
-BFD	Big freaking deal
+BFD	Big fucking deal
 BFF	Best friends forever
 BFFL	Best friends for life
 BFFLNMW	Best friends for life, no matter what
 BFFN	Best friend for now
-BFG	Big freaking grin
+BFG	Big fucking grin
 BFN	Bye for now
 BG	Big grin
 BGWM	Be gentle with me
@@ -233,11 +228,11 @@ BIC	Butt in chair
 BIF	Before I forget
 BIH	Burn in hell
 BIL	Brother in law
-BIO	Meaning “I'm going to the bathroom” (or) “Bathroom break”
+BIO	Bathroom break
 BION	Believe it or not
 BIOYA	Blow it out your a
 BIOYN	Blow it out your nose
-BISFLATM	Boy, I sure feel like a turquoise monkey! (unverified)
+BISFLATM	Boy, I sure feel like a turquoise monkey!
 BITMT	But in the meantime
 BL	Belly laugh
 BLNT	Better luck next time
@@ -272,31 +267,32 @@ BT	Bite this
 BTA	But then again
 BTDT	Been there, done that
 BTW	By the way
-BTYCL	Meaning ‘Bootycall'
+BTYCL	Bootycall
 BUBU	Slang term for the most beautiful of women
 BURN	Used to reference an insult
 BWL	Bursting with laughter
+BYO	Bring your own
 BYOB	Bring your own beer
 BYOC	Bring your own computer
 BYOD	Bring your own device
-BYOH	Bat you on (the) head
-BYOP	Bring your own paint (paintball)
+BYOH	Bat you on the head
+BYOP	Bring your own paint
 BYTM	Better you than me
-Bloke	Meaning Man (Discord)
+Bloke	Man
 C&G	Chuckle & grin
 C/P	Cross post
 C4N	Ciao for now
 CAD	Control + Alt + Delete
 CAD	Short for Canada/Canadian
-CAM	Camera (SMS)
+CAM	Camera
 CB	Chat break
 CB	Coffee break
 CB	Crazy b
-CD9	Code 9, Meaning “parents are around”
+CD9	parents are around
 CFS	Care for secret?
 CFY	Calling for you
 CHK	Check
-CIAO	Good-bye (Italian word)
+CIAO	Good-bye
 CICO	Coffee in, coffee out
 CID	Consider it done
 CID	Crying in disgrace
@@ -305,16 +301,15 @@ CLD	Could
 CLK	Click
 CM	Call me
 CMB	Call me back
-CMGR	Meaning “Community manager”
+CMGR	Community manager
 CMIIW	Correct me if I'm wrong
 CMON	Come on
-CNP	Continued (in) next post
+CNP	Continued in next post
 COB	Close of business
 COS	Because
-CP	Chat post (or continue in IM)
 CR8	Create
 CRA CRA	Slang term meaning “crazy”
-CRAFT	Can't remember a freaking thing
+CRAFT	Can't remember a fucking thing
 CRB	Come right back
 CRBT	Crying really big tears
 CRE8	Create
@@ -338,35 +333,36 @@ CURLO	See you around like a donut
 CWD	Comment when done
 CWOT	Complete waste of time
 CWYL	Chat with you later
-CX	Meaning “Correction”
+CX	Correction
 CYA	See you
 CYAL8R	See you later
 CYE	Check your e-mail
-Cakeday	Meaning Birthday (Reddit)
-Cray	Meaning crazy
+Cakeday	Birthday
+Cray	crazy
 D/L	Download
-D2	Dedos / fingers (Spanish SMS)
+D00D	Dude
+D2	Dedos or fingers
 D46?	Down for sex?
-DA	Meaning “The”
+DA	The
 DAE	Does anyone else?
-DAFUQ	(What) the Freak?
+DAFUQ	What the Fuck?
 DAM	Don't annoy me
 DBAU	Doing business as usual
 DBEYR	Don't believe everything you read
 DC	Disconnect
-DD	Dear (or Darling) daughter
+DD	Dear daughter
 DD	Due diligence
 DDG	Drop dead gorgeous
-DEGT	Dear (or Darling) daughter
-DERP	Meaning stupid or silly
+DEGT	Dear daughter
+DERP	stupid or silly
 DF	Don't even go there
 DGA	Don't go anywhere
 DGAF	Don't give a fuck
 DGT	Don't go there
 DGTG	Don't go there, girlfriend
 DGYF	Dang, girl you fine
-DH	Dear (or Darling) husband
-DHU	Dinosaur hugs (used to show support)
+DH	Dear husband
+DHU	Dinosaur hugs
 DIIK	Darned if I know
 DIKU	Do I know you?
 DILLIGAF	Do I look like I give a fuck?
@@ -378,22 +374,22 @@ DKDC	Don't know, don't care
 DL	Dead link
 DL	Down low
 DL	Download
-DLBBB	Don't let (the) bed bugs bite
+DLBBB	Don't let bed bugs bite
 DLTBBB	Don't let the bed bugs bite
-DM	Direct message (Twitter slang)
+DM	Direct message
 DM	Do me
 DM	Doesn't matter
 DMNO	Dude Man No Offense
 DMY	Don't mess yourself
 DN	Down
-DNC	Do not compute (meaning I do not understand)
-DNR	Dinner (SMS)
+DNC	Do not compute
+DNR	Dinner
 DNT	Don't
 DOE	Daughter of Eve
-DORBS	Meaning “Adorable”
+DORBS	Adorable
 DQMOT	Don't quote me on this
 DR	Didn't read
-DS	Dear (or Darling) son
+DS	Dear son
 DTR	Define the relationship
 DTRT	Do the right thing
 DTS	Don't think so
@@ -401,7 +397,7 @@ DTTD	Don't touch that dial
 DUPE	Duplicate
 DUR	Do you remember?
 DV8	Deviate
-DW	Dear (or Darling) wife
+DW	Dear wife
 DWF	Divorced white female
 DWM	Divorced white male
 DXNRY	Dictionary
@@ -409,8 +405,8 @@ DYFI	Did you find it?
 DYFM	Dude, you fascinate me
 DYJHIW	Don't you just hate it when…?
 DYNWUTB	Do you know what you are talking about?
-DYOR	Do your own research (common stock market chat slang)
-Downvote	Voting negatively on a thread using Reddit s voting system (Reddit)
+DYOR	Do your own research
+Downvote	Voting negatively on a thread using Reddit s voting system
 E	Ecstasy
 E1	Everyone
 E123	Easy as one, two, three
@@ -423,78 +419,76 @@ EG	Evil grin
 EI	Eat it
 EIP	Editing in progress
 ELI5	Explain like I'm 5
-EM	E-mail (Twitter slang)
-EMA	E-mail address (Twitter slang)
-EMBAR	Meaning “Embarassing”
+EM	E-mail
+EMA	E-mail address
+EMBAR	Embarassing
 EMFBI	Excuse me for butting in
 EMFBI	Excuse me for jumping in
 EMSG	E-mail message
 ENUF	Enough
 EOD	End of day
-EOD	End of discussion
-EOL	End of lecture
 EOL	End of life
 EOM	End of message
 EOS	End of show
 EOT	End of transmission
-ERS2	Eres tz / are you (Spanish SMS)
+ERS2	Eres or are you
 ES	Erase screen
 ESAD	Eat S and die!
 ETA	Edited to add
-ETA	Estimated time (of) arrival
+ETA	Estimated time arrival
 EVA	Ever
 EVO	Evolution
-EWG	Evil wicked grin (in fun, teasing)
+EWG	Evil wicked grin
 EWI	Emailing while intoxicated
-EXTRA	Meaning over the top
+EXTRA	over the top
 EYC	Excitable, yet calm
 EZ	Easy
 EZY	Easy
-F	Meaning female
+F	female
 F2F	Face to face
-F4F	Follow for follow (Instagram)
+F4F	Follow for follow
 FAAK	Falling asleep at keyboard
 FAB	Fabulous
 FAF	Funny as fuck
-FAM	FFamily, but not limited to actual family members. Could mean friends.
+FAM	Family, but not limited to actual family members. Could mean friends.
 FAQ	Frequently asked questions
-FAY	Freak all you
+FAY	Fuck all you
 FB	Facebook
-FBB	Meaning “Facebook buddy”
+FBB	Facebook buddy
 FBC	Facebook chat
-FBF	Fat boy food (e.g. pizza, burgers, fries)
+FBF	Facebook friend
+FBF	Fat boy food
 FBF	Flashback Friday
-FBF	Meaning “Facebook friend”
 FBFR	FaceBook friend
 FBM	Fine by me
-FBO	Facebook official (An official update from Facebook)
+FBO	Facebook official
 FBOW	For better or worse
 FC	Fingers crossed
-FCOL	For crying out loud
 FC'INGO	For crying out loud
-FEITCTAJ	Freak 'em if they can't take a joke
-FF	Follow Friday (Twitter slang)
+FCOL	For crying out loud
+FEITCTAJ	Fuck 'em if they can't take a joke
+FF	Follow Friday
 FFS	For fuck sakes
 FICCL	Frankly I couldn't care a less
-FIF	Freak I'm funny
-FIIK	Freaked if I know
+FIF	Fuck I'm funny
+FIIK	Fucked if I know
 FIIOOH	Forget it, I'm out of here
 FIL	Father in law
 FIMH	Forever in my heart
 FISH	First in, still here
 FITB	Fill in the blank
-FML	Freak My Life
-FOAD	Freak off and die
+FML	Fuck My Life
+FOAD	Fuck off and die
 FOAF	Friend of a friend
 FOMC	Falling off my chair
 FOMCL	Falling off my chair laughing
-FOMO	Fear of missing out (definition)
+FOMO	Fear of missing out
 FRT	For real though
 FTBOMH	From the bottom of my heart
 FTFY	Fixed that for you
 FTL	For the loss
 FTW	For the win
-FU	Freak you
+FU	Fuck you
 FUBAR	Fouled up beyond all recognition
 FUBB	Fouled up beyond belief
 FUTAB	Feet up, take a break
@@ -513,20 +507,17 @@ Feelsbatman	A social meme taking “feelsbadman” to the extreme. This referenc
 Feelsgoodman	A social meme that means to feel positive.
 Finna	Means “Going to”
 Finsta	A second Instagram account where someone can post things that they're too afraid to post on their main account.
-G	Giggle
-G	Grin
-G+	Google+
 G/F	Girlfriend
 G2CU	Good to see you
 G2G	Got to go
 G2GICYAL8ER	Got to go I'll see you later
 G2R	Got to run
-G2TU	Got to tell u (you)
+G2TU	Got to tell you
 G4C	Going for coffee
 G9	Genius
 GA	Go ahead
 GAC	Get a clue
-GAFC	Get a freaking clue
+GAFC	Get a fucking clue
 GAL	Get a life
 GAS	Got a second?
 GAS	Greetings and salutations
@@ -537,9 +528,10 @@ GD	Good
 GD/R	Grinning, ducking, and running
 GDR	Grinning, ducking, and running
 GF	Girl friend
+GF	Girlfriend
 GFI	Go for it
 GFN	Gone for now
-GG	Brother (Mandarin Chinese txt msgs)
+GG	Brother
 GG	Gotta Go
 GGMSOT	Gotta get me some of that
 GGOH	Gotta Get Outa Here
@@ -559,7 +551,7 @@ GNE1	Good night everyone
 GNIGHT	Good night
 GNITE	Good night
 GNSD	Good night, sweet dreams
-GOAT	Greatest of all Time(s)
+GOAT	Greatest of all Time
 GOI	Get over it
 GOL	Giggling out loud
 GOMB	Get off my back
@@ -576,11 +568,10 @@ GTFOH	Get the fuck outta here
 GTG	Got to go
 GTM	Giggling to myself
 GTRM	Going to read mail
-GTSY	Great (or good) to see you
+GTSY	Great to see you
 GUCCI	Good
 GUD	Good
 GWHTLC	Glad we had this little chat
-H	Hug
 H&K	Hugs & kisses
 H-BDAY	Happy Birthday
 H-FDAY	Happy Father's Day
@@ -592,11 +583,11 @@ HAG1	Have a good one
 HAGN	Have a good night
 HAGO	Have a good one
 HAK	Hug and kiss
-HALP	Help (Discord)
+HALP	Help
 HAND	Have a nice day
 HAU	How about you?
-HAWT	Have a wonderful day (out-dated, see next in list)
-HAWT	Meaning “sexy” or “attracGtive”
+HAWT	Have a wonderful time
+HAWT	sexy
 HB	Hug back
 HB	Hurry back
 HBD	Happy birthday
@@ -604,10 +595,10 @@ HBU	How about you?
 HF	Have fun
 HFAC	Holy flipping animal crackers
 HHIS	Head hanging in shame
-HIFW	How I felt when… (Used with photo or gif)
-HLA	Hola / hello (Spanish SMS)
+HIFW	How I felt when ...
+HLA	Hola
 HMU	Hit me up
-HNL	(w)Hole ‘nother level
+HNL	whole other level
 HOAS	Hold on a second
 HRU	How are you?
 HTH	Hope this helps
@@ -615,8 +606,8 @@ HUB	Head up butt
 HUYA	Head up your butt
 HV	Have
 HW	Homework
-HYFR	Hell yeah, Freaking right!
-I2	I too (me too)
+HYFR	Hell yeah, Fucking right!
+I2	I too
 IA8	I already ate
 IAAA	I am an accountant
 IAAD	I am a doctor
@@ -625,15 +616,14 @@ IAC	In any case
 IAE	In any event
 IANAC	I am not a crook
 IANAL	I am not a lawyer
-IAO	I am out (of here)
-IB	I'm back
+IAO	I am out
 IB	I'm back
 IC	I see
 ICAM	I couldn't agree more
 ICBW	It could be worse
 ICEDI	I can't even discuss it
 ICFILWU	I could fall in love with you
-ICYMI	In case you missed it (Twitter slang)
+ICYMI	In case you missed it
 IDBI	I don't believe it
 IDC	I don't care
 IDGAF	I don't give a fuck
@@ -644,8 +634,8 @@ IFYP	I feel your pain
 IG	Instagram
 IG2R	I got to run
 IGHT	I got high tonight
-IGN	I (I've) got nothing
-IGP	I got to (go) pee
+IGN	I got nothing
+IGP	I got to pee
 IHNI	I have no idea
 IIIO	Intel inside, idiot outside
 IIRC	If I remember correctly
@@ -664,16 +654,16 @@ IMO	In my opinion
 IMS	I am sorry
 IMSB	I am so bored
 IMTM	I am the man
-IMU	I miss u (you)
+IMU	I miss you
 INAL	I'm not a lawyer
-INV	Meaning “Invite”
+INV	Invite
 IOMH	In over my head
 IOW	In other words
 IRL	In real life
 IRMC	I rest my case
 ISLY	I still love you
 ISO	In search of
-ITAM	It's The Accounting, Man (financial blogs)
+ITAM	It's The Accounting, Man
 ITT	In This Thread
 ITYK	I thought you knew
 IUSS	If you say so
@@ -683,33 +673,33 @@ IWIAM	Idiot wrapped in a moron
 IWSN	I want sex now
 IYKWIM	If you know what I mean
 IYO	In your opinion
-IYQ	Meaning “I like you”
+IYQ	I like you
 IYSS	If you say so
-ImL	(in Arial font) Means I love you (a way of using the American sign language in text)
-Inspoo	Inspiration
+J00	You
+J00r	Your
 JAC	Just a second
 JAM	Just a minute
 JAS	Just a second
-JC (J/C)	Just checking
+JC	Just checking
 JDI	Just do it
-JELLY	Meaning “jealous”
+JELLY	jealous
 JFF	Just for fun
-JFGI	Just freaking Google it
+JFGI	Just fucking Google it
 JIC	Just in case
-JJ (J/J)	Just joking
+JJ	Just joking
 JJA	Just joking around
-JK (J/K)	Just kidding
+JK	Just kidding
 JLMK	Just let me know
 JMO	Just my opinion
 JP	Just playing
-JT (J/T)	Just teasing
+JT	Just teasing
 JTLYK	Just to let you know
 JV	Joint venture
 JW	Just wondering
 K	Okay
 K8T	Katie
 KB	Keyboard
-KDFU	Means Cracking (K) the (D as in Da) fuck up
+KDFU	Means Cracking the fuck up
 KEWL	Cool
 KEYA	I will key you later
 KEYME	Key me when you get in
@@ -725,25 +715,26 @@ KMK	Kiss my keister
 KMS	Killing myself
 KMT	Kiss my tushie
 KNIM	Know what I mean?
-KNOW	Meaning “knowledge”
+KNOW	knowledge
 KOC	Kiss on cheek
 KOL	Key opinion leader
 KOS	Kid over shoulder
 KOTC	Kiss on the cheek
-KOTD	Kicks of the day (Instagram)
+KOTD	Kicks of the day
 KOTL	Kiss on the lips
 KOW	Knock on wood
 KPC	Keeping parents clueless
-KSC	Kind (of) sort (of) chuckle
+KSC	Kind of sort of chuckle
 KT	Katie
 KUTGW	Keep up the good work
 KYS	Kill yourself
 Koreaboo	Someone obsessed with Korean culture
-L2G	(would) Love to go
 L2G	Like to go?
+L2G	would Love to go
 L2K	Like to come
 L2P	Learn to play
-L4L	Like for like (Instagram)
+L33T	Leet, meaning ‘elite'
+L4L	Like for like
 L8R	Later
 L8RG8R	Later, gator
 LAB	Life's a b
@@ -763,26 +754,26 @@ LHO	Laughing head off
 LHSX	Lets have sex
 LI	LinkedIn
 LIC	Like I care
-LIK	Meaning liquor
+LIK	liquor
 LIMT	Laugh in my tummy
 LIT	Extremely intoxicated
-LIT	Meaning really good or something fun and exciting
+LIT	really good
 LLGB	Love, later, God bless
 LLS	Laughing like silly
-LMAO	Laughing my a off
+LMAO	Laughing my arse off
 LMBO	Laughing my butt off
-LMFAO	Laughing my freaking a off
+LMFAO	Laughing my fucking a off
 LMIRL	Lets meet in real life
 LMK	Let me know
-LMMFAO	Laughing my mother freaking a off
+LMMFAO	Laughing my mother fucking a off
 LMNK	Leave my name out
-LMS	Like my status (Facebook)
-LNT	Meaning lost in translation
+LMS	Like my status
+LNT	lost in translation
 LOA	List of acronyms
 LOL	Laugh out loud
 LOLH	Laughing out loud hysterically
 LOLO	Lots of love
-LOLWTF	Laughing out loud (saying) “What the fuck?”
+LOLWTF	Laughing out loud saying "What the fuck?"
 LOTI	Laughing on the inside
 LQTM	Laughing quietly to myself
 LSHMBH	Laugh so hard my belly hurts
@@ -793,7 +784,7 @@ LTNS	Long time no see
 LTOD	Laptop of death
 LTS	Laughing to self
 LULT	Love you long time
-LULZ	Meaning joke, or for laughs
+LULZ	for laughs
 LVM	Left voice mail
 LWOS	Laughing without smiling
 LY	Love ya
@@ -807,23 +798,20 @@ MBS	Mom behind shoulder
 MC	Merry Christmas
 MDIAC	My Dad is a cop
 MEGO	My eyes glaze over
-MEH	Meaning a “shrug” or shrugging shoulders
-MEH	Meaning a “so-so” or “just okay”
-MEHH	Meaning a “sigh” or sighing
+MEH	mediocre
+MEHH	sigh
 MFI	Mad for it
-MFW	My face when… (Used with photo or gif)
+MFW	My face when ...
 MGB	May God bless
 MGMT	Management
-MHOTY	My hat (is) off to you
+MHOTY	My hat is off to you
 MIRL	Me in real life
 MIRL	Meet in real life
-MISS.(number)	Meaning “child and her age”. Miss.3 would be a 3-year old daughter
-MKAY	Meaning “Mmm, okay”
-MLM	Meaning give the middle finger
-MM	Sister (Mandarin Chinese txt msg)
-MMK	Meaning okay? (as a question)
+MKAY	Mmm, okay
+MLM	middle finger
+MM	Sister
+MMK	Meaning okay?
 MNC	Mother nature calls
-MNSG	Mensaje (message in Spanish)
 MOD	Moderator
 MOMBOY	Mamma's boy
 MOO	My own opinion
@@ -831,18 +819,18 @@ MOOS	Member of the opposite sex
 MORF	Male or female?
 MOS	Mother over shoulder
 MOSS	Member of same sex
-MR.(number)	Meaning “child and his age”. Mr.3 would be a 3-year old son
-MRT	Modified ReTweet (Twitter slang)
-MRW	My reaction when… (Used with photo or gif)
+MRT	Modified ReTweet
+MRW	My reaction when ...
 MSG	Message
 MTF	More to follow
 MTFBWU	May the force be with you
-MU	Miss U (you)
-MUAH	Multiple unsuccessful attempts (at/to) humor
+MU	Miss you
+MUAH	Multiple unsuccessful attempts at humour
 MUSM	Miss you so much
-MWAH	Meaning “kiss” (it is is the sound made when kissing through the air)
-MYO	Mind your own (business)
+MWAH	kiss
+MYO	Mind your own
 MYOB	Mind your own business
+N00B	Newbie
 N1	Nice one
 N2M	Nothing too much
 NADT	Not a darn thing
@@ -851,13 +839,11 @@ NANA	Not now, no need
 NBD	No big deal
 NE	Any
 NE1	Anyone
-NFM	None for me / Not for me
 NFM	Not for me
 NFS	Not for sale
-NFW	No freaking way
-NFW	Not for work
+NFW	No fucking way
 NFWS	Not for work safe
-NGL	Not gonna (going to) lie
+NGL	Not going to lie
 NIFOC	Naked in front of computer
 NIGI	Now I get it
 NIMBY	Not in my back yard
@@ -869,7 +855,7 @@ NMH	Not much here
 NMJC	Nothing much, just chilling
 NMU	Not much, you?
 NO1	No one
-NOWL	Meaning “knowledge”
+NOWL	knowledge
 NOYB	None of your business
 NP	No problem
 NPC	Non-playing character
@@ -880,23 +866,20 @@ NSFL	Not safe for life
 NSFW	Not safe for work
 NSISR	Not sure if spelled right
 NT	Nice try
-NTHING	Nothing (SMS)
+NTHING	Nothing
 NTS	Note to self
 NVM	Never mind
 NVR	Never
 NW	No way
 NWO	No way out
 O4U	Only for you
-OA	Online auctions (see more auction abbreviations)
 OATUS	On a totally unrelated subject
-OB	Oh baby
 OB	Oh brother
 OBV	Obviously
 OFC	Of course
 OG	Original gangster
 OGIM	Oh God, it's Monday
 OH	Overheard
-OHHEMMGEE	Meaning “Oh My God” (alternate of OMG)
 OI	Operator indisposed
 OIB	Oh, I'm back
 OIC	Oh, I see
@@ -905,14 +888,14 @@ OL	Old lady
 OLL	Online love
 OM	Oh, my
 OM	Old man
-OMAA	Oh, my aching A (butt)
+OMAA	Oh, my aching A arse
 OMDB	Over my dead body
-OMFG	Oh my freaking God
+OMFG	Oh my fucking God
 OMG	Oh my God
 OMG	Oh my gosh
 OMGYG2BK	Oh my God, you got to be kidding
 OMGYS	Oh my gosh you suck
-OMS	On my soul (meaning “promise”)
+OMS	On my soul
 OMW	On my way
 ONL	Online
 OO	Over and out
@@ -920,12 +903,12 @@ OOC	Out of character
 OOH	Out of here
 OOMF	One of my followers
 OOTD	One of these days
-OOTD	Outfit of the day (Instagram)
+OOTD	Outfit of the day
 OOTO	Out of the office
 OP	On phone
 ORLY	Oh really?
 OS	Operating system
-OT	Off topic (discussion forums)
+OT	Off topic
 OTB	Off to bed
 OTFL	On the floor laughing
 OTL	Out to lunch
@@ -942,16 +925,16 @@ P2P	Peer to peer
 P911	Parents coming into room alert
 PAP	Post a picture
 PAW	Parents are watching
-PBOOK	Phonebook (e-mail)
+PBOOK	Phonebook
 PCM	Please call me
-PDA	Personal display (of) affection
+PDA	Personal display of affection
 PDH	Pretty darn happy
 PDQ	Pretty darn quick
 PDS	Please don't shoot
 PEEPS	People
-PFT	Pretty freaking tight
+PFT	Pretty fucking tight
 PIC	Picture
-PIP	Peeing in pants (laughing hard)
+PIP	Peeing in pants
 PIR	Parents in room
 PISS	Put in some sugar
 PITA	Pain in the butt
@@ -969,19 +952,18 @@ PMSL	Pee myself laughing
 POAHF	Put on a happy face
 POIDH	Picture, or it didn't happen
 POS	Parent over shoulder
-POTD	Photo of the day (Instagram)
+POTD	Photo of the day
 POV	Point of view
-POV	Privately owned vehicle (originally used to differentiate an individual's vehicle from a military vehicle)
 PPL	People
 PPU	Pending pick-up
 PRESH	Precious
 PROBS	Probably
-PROGGY	Meaning computer program
+PROGGY	computer program
 PROLLY	Probably
-PRON	Meaning pornography
+PRON	pornography
 PRT	Party
-PRT	Please Retweet (Twitter slang)
-PRW	People/parents are watching
+PRT	Please Retweet
+PRW	People are watching
 PSA	Public Service Announcement
 PSOS	Parent standing over shoulder
 PSP	Playstation Portable
@@ -993,14 +975,14 @@ PTO	Paid time off
 PTO	Parent Teacher Organization
 PTO	Personal time off
 PU	That stinks!
-PUKS	Pick up kids (SMS)
-PWN	Meaning “own”
+PUKS	Pick up kids
+PWN	own
 PXT	Please explain that
 PYT	Pretty young thing
 PZ	Peace
 PZA	Pizza
 Q	Queue
-Q4U	(I have a) question for you
+Q4U	I have a question for you
 QC	Quality control
 QFE	Question for everyone
 QFI	Quoted for idiocy
@@ -1010,16 +992,16 @@ QIK	Quick
 QL	Quit laughing
 QOTD	Quote of the day
 QQ	Quick question
-QQ (qq) (Q_Q)	Meaning “crying eyes”
 QSL	Reply
 QSO	Conversation
 QT	Cutie
 QTPI	Cutie pie
-R	Meaning “are”
-R8	Rate (SMS)
+Q_Q	crying eyes
+R	are
+R8	Rate
 RBAY	Right back at you
-RFN	Right freaking now
-RGR	Roger (I agree, I understand)
+RFN	Right fucking now
+RGR	I understand
 RHIP	Rank has its privileges
 RIP	Rest in peace
 RL	Real life
@@ -1032,32 +1014,29 @@ ROFLCOPTER	Rolling on floor laughing and spinning around
 ROFLMAO	Rolling on the floor, laughing my butt off
 ROTFL	Rolling on the floor laughing
 ROTFLUTS	Rolling on the floor laughing unable to speak
-RS	Runescape (online gaming)
+RS	Runescape
 RSN	Real soon now
-RT	Retweet (Twitter slang)
+RT	Retweet
 RT	Roger that
 RTBS	Reason to be single
-RTFM	Read the freaking manual
-RTFQ	Read the freaking question
-RTHX	Meaning “Thanks for the RT (Retweet)” (Twitter slang)
+RTFM	Read the fucking manual
+RTFQ	Read the fucking question
+RTHX	Thanks for the Retweet
 RTMS	Read the manual, stupid
-RTNTN	Retention (email, Government)
-RTRCTV	Retroactive (email, Government)
-RTRMT	Retirement (email, Government)
 RTSM	Read the stupid manual
-RTWFQ	Read the whole freaking question
+RTWFQ	Read the whole fucking question
 RU	Are you?
 RUMOF	Are you male or female?
 RUOK	Are you okay?
-RUT	Are u (you) there?
+RUT	Are you there?
 RW	Real world
-RX	Meaning drugs or prescriptions
 RX	Regards
+RX	prescription drugs
 RYB	Read your Bible
 RYO	Roll your own
 RYS	Are you single?
 RYS	Read your screen
-S2R	Send to receive (meaning send me your picture to get mine)
+S2R	Send to receive
 S2S	Sorry to say
 S4L	Spam for life
 SAL	Such a laugh
@@ -1065,28 +1044,28 @@ SAT	Sorry about that
 SAVAGE	Slang for a shockingly careless expression or response to an event or message
 SB	Should be
 SB	Smiling back
-SB	Snap back (Snapchat)
-SBIA	Meaning Standing back in amazement
+SB	Snap back
+SBIA	Standing back in amazement
 SBT	Sorry 'bout that
 SC	Stay cool
 SD	Sweet dreams
 SDMB	Sweet dreams, my baby
-SELFIE	A photo that is taken of oneself for social media sharing (definition)
-SENPAI	Meaning someone older than you, someone you look up to
+SELFIE	self portrait
+SENPAI	someone older than you
 SEO	Search engine optimization
 SETE	Smiling Ear-to-Ear
 SFAIK	So far as I know
 SH	Same here
 SHID	Slapping head in disgust
-SHIP	Slang for “wishing two people were in a relationship”
+SHIP	relationship
 SH^	Shut up
 SICNR	Sorry, I could not resist
 SIG2R	Sorry, I got to run
 SIHTH	Stupidity is hard to take
 SIMYC	Sorry I missed your call
 SIR	Strike it rich
-SIS	Meaning sister
 SIS	Snickering in silence
+SIS	sister
 SIT	Stay in touch
 SITD	Still in the dark
 SJW	Social justice warrior
@@ -1096,23 +1075,24 @@ SK8R	Skater
 SK8RBOI	Skater Boy
 SLAP	Sounds like a plan
 SM	Social media
-SMAZED	Smoky haze (marijuana stoned)
+SMAZED	Smoky haze
 SMEXI	Combination of sexy and Mexican, used to describe attractive people
 SMH	Shaking my head
 SMHID	Scratching my head in disbelief
 SNAFU	Situation normal all fouled up
 SNERT	Snot nosed egotistical rude teenager
-SNR	Streaks and Recents (Snapchat)
+SNR	Streaks and Recents
 SO	Significant other
-SOAB	Son of a B
+SOAB	Son of a Bitch
+SOK	It's
 SOL	Sooner or later
 SOMY	Sick of me yet?
-SOS	Meaning help
 SOS	Son of Sam
+SOS	save our souls
 SOT	Short of time
 SOTMG	Short of time, must go
 SOWM	Someone with me
-SPK	Speak (SMS)
+SPK	Speak
 SPST	Same place, same time
 SPTO	Spoke to
 SQ	Square
@@ -1130,55 +1110,54 @@ SU	Shut up
 SUITM	See you in the morning
 SUL	See you later
 SUP	What's up?
-SUTH	So use(d) to haters (Facebook)
-SUX	Meanings sucks or “it sucks”
+SUTH	So used to haters
+SUX	sucks
 SUYF	Shut up you fool
-SWAG	Meaning free stuff and giveaways from tech tradeshows (definition)
 SWAG	Scientific wild a guess
-SWAK	Sent (or sealed) with a kiss
-SWALK	Sealed (or sealed) with a loving kiss
+SWAG	free stuff
+SWAK	Sealed with a kiss
+SWALK	Sealed with a loving kiss
 SWAT	Scientific wild butt guess
 SWL	Screaming with laughter
-SWMBO	She who must be obeyed. Meaning wife or partner
+SWMBO	She who must be obeyed.
 SYL	See you later
 SYS	See you soon
 SYY	Shut your yapper
 Slay	To succeed at something
 SorG	Straight or Gay?
-Stan	Meaning a die-hard fan of someone (Snapchat)
-S'OK	Meaning It' (s) okay (ok)
+Stan	die-hard fan
 T+	Think positive
 T4BU	Thanks for being you
 T:)T	Think happy thoughts
 TA	Thanks a lot
 TAFN	That's all for now
 TAM	Tomorro a.m.
-TANK	Meaning really strong
-TANKED	Meaning “owned”
-TANKING	Meaning “owning”
+TANK	really strong
+TANKED	owned
+TANKING	owning
 TARFU	Things Are Really fouled Up.
-TAU	Thinking about u (you)
+TAU	Thinking about you
 TAUMUALU	Thinking about you miss you always love you
 TBBH	To be brutally honest
 TBC	To be continued
 TBD	To be determined
 TBH	To be honest
 TBL	Text back later
-TBT	Throwback Thursday (Twitter slang)
+TBT	Throwback Thursday
 TC	Take care
 TCB	Take care of business
 TCOY	Take care of yourself
 TD2M	Talk dirty to me
 TDTM	Talk dirty to me
-TEA	Meaning gossip
-TFF	Too freaking funny
+TEA	gossip
+TFF	Too fucking funny
 TFS	Thanks for sharing
-TFTF	Thanks for the follow (Twitter slang)
+TFTF	Thanks for the follow
 TFTI	Thanks for the invitation
-TFTT	Thanks for this tweet (Twitter slang)
+TFTT	Thanks for this tweet
 TG	Thank goodness
 TGIF	Thank God it's Friday
-THNQ	Thank-you (SMS)
+THNQ	Thank-you
 THNX	Thanks
 THOT	That whre over there
 THT	Think happy thoughts
@@ -1195,7 +1174,7 @@ TLK2UL8R	Talk to you later
 TM	Trust me
 TMA	Take my advice
 TMB	Text me back
-TMB	Tweet me back (Twitter slang)
+TMB	Tweet me back
 TMI	Too much information
 TMOT	Trust me on this
 TMTH	Too much to handle
@@ -1210,11 +1189,11 @@ TOU	Thinking of you
 TOY	Thinking of you
 TPM	Tomorrow p.m.
 TPTB	The powers that be
-TQ	Te quiero / I love you (Spanish SMS)
+TQ	Te quiero or I love you
 TSH	Tripping so hard
 TSNF	That's so not fair
 TSTB	The sooner, the better
-TT	Trending topic (Twitter slang)
+TT	Trending topic
 TTFN	Ta ta for now
 TTG	Time to go
 TTLY	Totally
@@ -1225,7 +1204,7 @@ TTYL	Talk to you later
 TTYS	Talk to you soon
 TU	Thank you
 TUI	Turning you in
-TURNT	Meaning excitement, turned up
+TURNT	turned up
 TWSS	That's what she said
 TX	Thanks
 TY	Thank you
@@ -1235,14 +1214,14 @@ TYS	Told you so
 TYSO	Thank you so much
 TYT	Take your time
 TYVM	Thank you very much
-U-L	Meaning “You will”
+U-L	mEYou will
 UCMU	You crack me up
-UDI	Unidentified drinking injury (meaning bruise, scratch, ache and so on)
-UDM	U (You) da (the) man
+UDI	Unidentified drinking injury
+UDM	You the man
 UDS	Ugly domestic scene
-UFB	Un freaking believable
+UFB	Un fucking believable
 UFN	Until further notice
-UFWM	You freaking with me?
+UFWM	You fucking with me?
 UGTBK	You've got to be kidding
 UHGTBSM	You have got to be s#$ting me!
 UKTR	You know that's right
@@ -1251,18 +1230,18 @@ UN4TUN8	Unfortunate
 UNA	Use no acronyms
 UNBLEFBLE	Unbelievable
 UNCRTN	Uncertain
-UNPC	Un- (not) politically correct
-UOK	(Are) You ok?
-UR	You are / You're
+UNPC	Un-politically correct
+UOK	You ok?
+UR	You are
 UR2YS4ME	You are too wise for me
 URA	You are a star
-URH	You are hot (U R Hot)
+URH	You are hot
 URSKTM	You are so kind to me
 URTM	You are the man
 URW	You are welcome
 USBCA	Until something better comes along
 USU	Usually
-UT	Unreal Tournament (online gaming)
+UT	Unreal Tournament
 UT2L	You take too long
 UTM	You tell me
 UV	Unpleasant visual
@@ -1274,7 +1253,7 @@ VBL	Visible bra line
 VBS	Very big smile
 VC	Voice chat
 VEG	Very evil grin
-VFF	Very freaking funny
+VFF	Very fucking funny
 VFM	Value for money
 VGC	Very good condition
 VIP	Very important person
@@ -1283,22 +1262,15 @@ VN	Very nice
 VRY	Very
 VSC	Very soft chuckle
 VSF	Very sad face
-VoIP	Voice over Internet Protocol (definition)
-W/	With
-W/B	Welcome back
-W/B	Write back
-W/E	Whatever
-W/END	Weekend
-W/O	Without
-W3	WWW (Web address)
+W3	WWW
 W8	Wait
 W@	What?
 WAH	Working at home
 WAJ	What a jerk
 WAM	Wait a minute
-WAN2	Want to? (SMS)
+WAN2	Want to?
 WAN2TLK	Want to talk
-WAREZ	Meaning pirated (illegally gained) software
+WAREZ	pirated software
 WAS	Wait a second
 WAS	Wild a guess
 WAT	What
@@ -1331,7 +1303,7 @@ WL	Whatta loser
 WOA	Work of Art
 WOKE	Slang for people who are aware of current social issues, and politics
 WOMBAT	Waste of money, brains and time
-WOW	World of Warcraft (online gaming)
+WOW	World of Warcraft
 WRK	Work
 WRT	With regard to
 WRU	Where are you?
@@ -1341,57 +1313,51 @@ WTF	What the fuck ?
 WTFE	What the fuck ever
 WTFO	What the fuck ?, over.
 WTG	Way to go
-WTGP	Want to go private (talk out of public chat area)
+WTGP	Want to go private?
 WTH	What the heck?
 WTM	Who's the man?
 WU	What's up?
 WUCIWUG	What you see is what you get
 WUF	Where are you from?
 WUP	What's up?
-WUT	Meaning “what”
+WUT	what
 WUU2	What are you up to?
-WUW	What u (you) want?
-WUZ	Meaning “was”
-WWJD	What Would Judd Do? (Artist Donald Judd, who was known to do things in his own compulsive way.)
+WUW	What you want?
+WUZ	was
 WWJD	What would Jesus do?
 WWNC	Will wonders never cease
 WWYC	Write when you can
 WYCM	Will you call me?
-WYD	What (are) you doing?
+WYD	What you doing?
 WYGAM	When you get a minute
 WYHAM	When you have a minute
 WYLEI	When you least expect it
 WYSIWYG	What you see is what you get
 WYWH	Wish you were here
 X	Kiss
-X!	Meaning “a typical woman”
-X-1-10	Meaning “Exciting”
-XD	Meaning a “devilish smile”
-XD	Meaning “really hard laugh” (where D is a smiley mouth)
 XLNT	Excellent
-XLR8	Meaning “faster” or “going faster”
+XLR8	faster
 XME	Excuse Me
 XOXOXO	Hugs & Kisses
-XPOST	Meaning Cross-post. A link posted to a subreddit that was already shared on a different subreddit (Reddit)
-XYL	Ex-young lady, meaning wife. (amateur radio)
+XPOST	Cross-post
+XYL	Ex-young lady
 XYZ	Examine your zipper
-Y	Meaning Yawn
 Y2K	You're too kind
 Y?	Why?
-YA	Your
+YA	Young adult
 YAA	Yet another acronym
 YABA	Yet another bloody acronym
 YARLY	Ya, really?
-YAS	Meaning “praise”
+YAS	praise
 YBIC	Your brother in Christ
 YBS	You'll be sorry
 YCDBWYCID	You can't do business when your computer is down
 YCHT	You can have them
 YCLIU	You can look it up
 YCMU	You crack me up
-YCT	Meaning Your comment to?
+YCT	Your comment to?
 YD	Yesterday
-YEET	Meaning excitement, approval or display of energy (i.e. throwing something)
+YEET	excitement
 YF	Wife
 YG	Young gentleman
 YGG	You go girl
@@ -1414,8 +1380,8 @@ YSIC	Your sister in Christ
 YSYD	Yeah sure you do
 YT	You there?
 YT	YouTube
-YTB	Youth talk back
 YTB	You're the best
+YTB	Youth talk back
 YTG	You're the greatest
 YTTL	You take too long
 YW	You're welcome
@@ -1423,22 +1389,11 @@ YWHNB	Yes, we have no bananas
 YWHOL	Yelling “woohoo” out loud
 YWSYLS	You win some, you lose some
 YYSSW	Yeah, yeah, sure, sure, whatever
-Z	Meaning “Said”
-Z	Zero
-Z	Z's are calling (meaning going to bed/sleep)
+Z	Z's are calling
 Z%	Zoo
 ZH	Sleeping Hour
-ZOMG	Used in World of Warcraft to mean OMG (Oh My God)
 ZOT	Zero tolerance
-ZUP	Meaning “What's up?”
-ZZZZ	Sleeping (or bored)
+ZUP	What's up?
+ZZZZ	Sleeping
 ^5	High-five
 ^URS	Up yours
-^^	Meaning “read line” or “read message” above
-copteriss	oh my freaking god, laugh my a off, owned, roll on floor spinning around I'm so sad
-d00d	Dude
-j00	You
-j00r	Your
-k/b	Keyboard
-l33t	Leet, meaning ‘elite'
-n00b	Newbie

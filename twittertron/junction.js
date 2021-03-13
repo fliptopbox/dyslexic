@@ -1,8 +1,3 @@
-const EventEmitter = require('events');
-
-process.messages = new EventEmitter();
-module.exports = process.messages;
-
 /*
  *
  * A script that correclates mircofunctions
@@ -19,3 +14,9 @@ module.exports = process.messages;
  *
  *
  */
+
+process.message.on("message", function(e) {
+  console.log("Dispatch request for work");
+  console.log(e);
+});
+

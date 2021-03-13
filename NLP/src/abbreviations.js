@@ -20,7 +20,14 @@ function parseTextData(text) {
 }
 
 function exists(word) {
-    return collection[word] || null;
+
+  const value = collection[word];
+
+  const uc = word.toUpperCase();
+  const alt = collection[uc];
+  const pair = alt ? [word, alt] : null;
+
+  return pair || value || null;
 }
 
 function unpunctuate(text, full = false) {
@@ -29,7 +36,7 @@ function unpunctuate(text, full = false) {
     const re = /([\w\d-]+)([,;:!?\.]+$)?/;
     const [word, punc] = text.match(re).slice(1);
     const abbr = exists(word);
-    const phrase = abbr || word;
+    const phrase = abbr ? abbr[1] : word;
 
     if (!full) return `${phrase}${punc || ''}`;
 
@@ -45,7 +52,7 @@ function unpunctuate(text, full = false) {
     );
 }
 
-function expand(sentence) {
+function expand(sentence, uc = false) {
     const array = sentence
         .split(/\s+/)
         .map((v) => unpunctuate(v))

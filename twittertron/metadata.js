@@ -1,6 +1,7 @@
 const strhash = require('string-hash');
+const word = require("./word");
 
-/* quokka inline test */
+/* quokka inline test *!/
 
 const sample = require('./tweet-message.json');
 gethashtags(sample); //?
@@ -19,8 +20,9 @@ function metadata(tweet) {
     const words = getwords(text);
     const mentions = getmentions(tweet);
     const hashtags = gethashtags(tweet);
-    const chksum = strhash(text).toString(36);
+    const chksum = strhash(words.join("")).toString(36);
     const retweet = tweet.retweet || /^RT\s/i.test(text) ? true : false;
+
     const {
         screen_name,
         description,
@@ -30,6 +32,7 @@ function metadata(tweet) {
         favourites_count,
         statuses_count,
     } = user;
+
     const metadata = {
         id,
         id_str,
@@ -59,13 +62,10 @@ function gettext(tweet) {
 }
 
 function getwords(text) {
-    // remove hashes and mentions and https
     return text
-        .replace(/(#[^\s]+)/gi, '')
-        .replace(/(@[^\s]+)/gi, '@')
-        .replace(/(http[^\s]+)/gi, 'URL')
-        .replace(/\s+/g, ' ')
-        .split(' ');
+        .split(/\s+/g)
+        .map(word)
+        .filter(s => s);
 }
 
 function getmentions({ entities, extended_tweet }) {
@@ -77,9 +77,10 @@ function getmentions({ entities, extended_tweet }) {
 
     const hashes = [
         ...new Set(
-            [...entities.user_mentions, ...extended.entities.user_mentions].map(
-                (o) => o.screen_name
-            )
+            [
+                ...entities.user_mentions, //
+                ...extended.entities.user_mentions,
+            ].map((o) => o.screen_name)
         ),
     ];
     return hashes;

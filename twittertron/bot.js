@@ -6,165 +6,55 @@
 console.clear();
 
 const twit = require('twit');
-const cliche = require('cliches');
-const textToHashTag = require('./textToHashTag');
-const randomTextMessage = require('./randomTextMessage');
+const rc = require('./runtime');
 const config = require('./config.js');
 const db = require('./checksumStorage');
-const { track, ignore, interesting } = require('./track');
+const track = rc('track');
 const metadata = require('./metadata');
-const intersection = require('./intersection.js');
-const T = new twit(config);
 const dev = !process.env.PORT ? true : false;
 
 console.log(track);
 
+const T = new twit(config);
 const stream = T.stream('statuses/filter', { track });
 
-let messageCounter = 0; // inc everytime a cliche comes in.
-const messageModulus = 789; // ie 23 % 5; where 0 triggers a surreal tweet event
+// render metadata and dispatch result
+stream.on('tweet', (e) => process.messages.emit('tweet', e));
 
-// this should come from a persisted register
-if(dev) console.log(stream);
+process.messages.on('tweet', emitMessageMetadata);
+process.messages.on('publish', publishTextMessage);
+process.messages.on('post-message', postMessage);
 
-stream.on('tweet', function (tweet) {
-    const meta = metadata(tweet);
-    const {
-        id,
-        hashtags,
-        mentions,
-        words,
-        screen_name,
-        description,
-        chksum,
-        lang,
-        retweet,
-    } = meta;
+function emitMessageMetadata(e) {
+    const meta = { ...metadata(e) };
+    process.messages.emit('message', meta);
+}
 
-    const exists = db.checksumExists(chksum);
-    const reject = [lang !== 'en', exists, retweet].filter((v) => v).length > 0;
+function postMessage(path, params, callback) {
+    callback =
+        callback ||
+        function (err) {
+            console.log('<< [%s]', path);
+            if (err) console.log('Twitter Error', err);
+        };
+    return dev ? callback() : T.post(path, params, callback);
+}
 
-    if (reject) return;
-
-    const phrase = words.join(' ');
-    const cliches = cliche.test(phrase);
-
-    // a dev helper to see stream data
-    if (dev) console.log('Candidate message', screen_name, messageCounter, cliches);
-
-    if (!cliches) return;
-
-    const rehashtags = textToHashTag(phrase, cliches);
-    const filtered = filter(meta);
-    const [cons, pros] = filtered;
-    const total = pros - cons;
-    const promote = pros > 3 || (!cons && pros > 1) || total > 2 || false;
-
-    console.log(
-        '\n>> (%s) w%s #%s @%s <%s>',
-        screen_name,
-        words.length,
-        hashtags.length,
-        mentions.length,
-        `${chksum} ${messageCounter} ${messageModulus}`,
-        '\n>> ' + hashtags,
-        '\n>> ' + id,
-        '\n>> ' + phrase,
-        '\n>> ' + rehashtags,
-        '\n>> ' + description,
-        '\n>> ' + filtered,
-        '\n== ' + promote
-    );
-
-    if (!promote) return;
-    promoteId({ ...meta, rehashtags, phrase });
-
-    if (++messageCounter % messageModulus !== 0) return;
-    surrealTweet();
-});
-
-function surrealTweet() {
-    const status = randomTextMessage();
+function publishTextMessage(textmessage) {
+    const status = textmessage;
     const params = { status };
     const path = 'statuses/update';
 
     console.log(
-        'Generate Surreal Tweet:\n%s\n%s',
-        phrase,
-        new Date().toString()
+        '\nGenerate Surreal Tweet:',
+        '\n----------------------------------\n',
+        textmessage,
+        '\n----------------------------------\n',
+        `\n(characters: ${textmessage.length})`
     );
 
     postMessage(path, params);
     db.persistLastTweet(status);
 
     return status;
-}
-
-function filter({ text, description }) {
-    const string = `${text} -- ${description}`;
-    const ignored = intersection(ignore, string);
-    const intrested = intersection(interesting, string);
-    const tracking = intersection(track, string);
-
-    if (ignored.length) {
-        console.log('!! ', ignored);
-    }
-    return [
-        //
-        ignored.length,
-        intrested.length + tracking.length,
-    ];
-}
-
-function promoteId(object) {
-    const { chksum, screen_name, id, id_str } = object;
-    if (!db.persistChecksum(object)) return;
-
-    const [l, r] = [random(30, 10), random(90, 30)];
-    console.log('Persisted %s %s\nLike: %s\nRe: %s\n\n', chksum, id, l, r);
-
-    setTimeout(() => like(id_str, screen_name), l);
-    setTimeout(() => retweetid(id_str, screen_name), r);
-}
-
-function random(max = 60, min = 15) {
-    // arguments in seconds but
-    // random delay as miliseconds
-    const seconds = (Math.random() * (max - min) + min) >> 0;
-    return seconds * 1000;
-}
-
-function like(id, name) {
-    const path = 'favorites/create';
-    const params = { id };
-    const callback = function (e) {
-        console.log('<< liked', name);
-        if (e) console.log(e);
-    };
-
-    postMessage(path, params, callback);
-}
-
-function retweetid(id, name) {
-    const path = 'statuses/retweet/:id';
-    const params = { id };
-    const callback = function (e, r) {
-        console.log('<< retweeted', name);
-        if (e) console.log(e);
-    };
-
-    postMessage(path, params, callback);
-}
-
-function postMessage(path, params, callback) {
-    if (dev) return;
-
-    callback =
-        callback ||
-        function (e) {
-            console.log('<< [%s]', path);
-            if (e) console.log('Twitter Error', e);
-        };
-
-    T.post(path, params, callback);
 }

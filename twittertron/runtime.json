@@ -1,0 +1,84 @@
+{
+    "runtime": {
+        "messageModulus": 5000
+    },
+    "word-usage": {
+        "showsummary": false,
+        "showhead": 0
+    },
+    "flowrate": {
+        "preroll": 100,
+        "history": 10000,
+        "emasize": 8,
+        "barwidth": 50,
+        "flowrate": true,
+        "showflow": true,
+        "spikeratio": 0.33,
+        "flowpermessage": 15,
+        "barchar": ["▒", "░", "┋", "▓", "█"]
+    },
+    "interesting": [
+        "#?(am)?writ(\\w+)",
+        "#?edit(\\w+)",
+        "#?film(\\w+)",
+        "#?short(\\w+)",
+        "#?author(\\w+)?",
+        "#?(gho\\w+)?writ(\\w+)",
+        "#?screen(\\w+)",
+        "#?poe[mtry]+",
+        "#?book(\\w+)",
+        "#?story(\\w+)",
+        "#?novel(\\w)?",
+        "#?word(\\w+)",
+        "#?publish\\w+"
+    ],
+    "ignore": [
+        "blm",
+        "black",
+        "white",
+        "racis(\\w+)",
+        "slav(\\w+)+",
+        "colo(\\w+)",
+        "christ(\\w+)",
+        "(\\w+)?ethic(\\w+)?",
+        "sjw",
+        "equit(\\w+)",
+        "allah",
+        "mohamm(\\w+)",
+        "jesus",
+        "trump",
+        "fascis(\\w+)",
+        "nazi",
+        "suprema(\\w+)",
+        "justice",
+        "misogyn(\\w+)",
+        "patria(\\w+)",
+        "diversi(\\w+)",
+        "extinct(\\w+)"
+    ],
+    "track": [
+        "writingcommunity",
+        "writerslift",
+        "writerslife",
+        "amwriting",
+        "literature",
+        "poems",
+        "essay",
+
+        "write",
+        "writing",
+        "fiction",
+        "horror",
+        "fantasy",
+        "drama",
+        "scifi",
+
+        "shortstory",
+        "published",
+        "flashfiction",
+
+        "selfpublished",
+        "bookboost",
+        "bookplugs"
+    ]
+}

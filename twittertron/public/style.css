@@ -2,10 +2,12 @@ body {
     background: red;
     text-align: center;
     font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
 }
 
 img {
-    margin: 50px auto;
+    margin: 50px auto 15px;
 }
 
 h1 {
@@ -52,15 +54,14 @@ header {
     display: block;
     border-radius: 4vw;
     padding: 2.5vw;
-    min-height: 12vh;
-    position: absolute;
-    width: 12vw;
-    left: -10vw;
+    position: relative;
     line-height: 0.9;
     font-family: serif;
     font-size: 1.6em;
-    top: 6vh;
-    z-index: 1;
+}
+
+.message em {
+  font-size: 0.8em;
 }
 
 .message:after {
@@ -70,8 +71,28 @@ header {
     border: 1vw solid white;
     border-width: 20px 20px 0 0;
     position: absolute;
-    right: -10px;
+    left: 0;
     z-index: 0;
-    transform: rotate(45deg);
-    top: 7vh;
+    transform: rotate(-45deg);
+    top: 0;
+    ma FONT-VARIANT: JIS04;
+    margin: -15px 0 0 80px;
+}
+
+.pulse span {
+    background: black;
+    color: white;
+    display: block;
+    font-size: 1.3em;
+    margin: 1em 0;
+    padding: 1em 0;
+}
+
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: black;
+    margin: 4px;
 }

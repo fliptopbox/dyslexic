@@ -12,7 +12,7 @@ describe('description', () => {
         expect(collection).toBeInstanceOf(Object);
 
         const keys = Object.keys(collection);
-        expect(keys).toHaveLength(1361);
+        expect(keys.length).toBeGreaterThan(1300);
     });
 
     test('simple text replacememnt', () => {
@@ -23,8 +23,8 @@ describe('description', () => {
     });
 
     test('punctutated repacement preserves punctuation', () => {
-        expect(unpunctuate('abc')).toEqual('abc');
-        expect(unpunctuate('abc,')).toEqual('abc,');
+        expect(unpunctuate('abcx')).toEqual('abcx');
+        expect(unpunctuate('abcx,')).toEqual('abcx,');
     });
 
     test('can add new abbriviations', () => {
@@ -46,7 +46,7 @@ describe('description', () => {
             'you',
             'Tonight,',
             'imma',
-            'Too much too handle',
+            'Too much to handle',
             'be',
             'there',
             'at',
