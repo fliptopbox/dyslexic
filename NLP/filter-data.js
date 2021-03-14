@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const filename = path.join(__dirname, './glossary-eng-all.tsv');
-const glossary = fs.readFileSync( filename, 'utf8');
+const glossary = fs.readFileSync(filename, 'utf8');
 const collection = glossary
     .split('\n')
     .map((s) => s.split('\t'))
@@ -10,25 +10,34 @@ const collection = glossary
     .map((o) => {
         const by = String(o.by || 'Unknown').replace(/^by /i, '');
         const src = relativepath(o.id);
+        const files = getTextFiles(src);
         const dest = destinationpath(o.id, by, o.title);
-        return { ...o, by, src, dest };
+        return { ...o, by, files };
     });
 
+const row = collection[2];
+const [filepath] = row.files.slice(-1);
+const text = fileToLines(filepath);
+const output = metadata(text);
 
-console.log(collection.length, collection[13])
-
-
-
-
-
-/**!/
-
-const files =  ["1/0/0/0/10001/10001.txt", "8/0/0/8008/8008.txt", "8/9/3/8930/8930-8.txt"]
-const text = fileToLines(files[2]);
-
-console.log(metadata(text)); //?
+output.frontmatter.filepath = filepath;
+console.log( output.frontmatter );
 
 /**/
+getTextFiles('1/11/');
+function getTextFiles(folder) {
+    const dir = path.join(__dirname, folder);
+    if (!fs.existsSync(dir)) return [];
+    const items = fs.readdirSync(dir);
+    const [name] = folder
+        .replace(/\/$/, '')
+        .split(/\//)
+        .filter((s) => s.trim())
+        .slice(-1);
+
+    const re = new RegExp(`^(${name}).*(txt)$`);
+    return items.filter((s) => re.test(s)).map((s) => `${folder}${s}`); //?
+}
 
 function relativepath(id) {
     const parts = String(id).split('');
@@ -64,29 +73,35 @@ function metadata(lines) {
     // from the end reverse to find the end marker
     // extract the content between the markers
 
-    const offset = 350;
+    const bottomoffset = 650;
     const { length } = lines;
     const top = lines.slice(0, 50);
-    const tail = lines.slice(-offset);
+    const tail = lines.slice(-bottomoffset);
 
-    const alpha = /START OF \w+ PROJECT/i;
-    const omega = /End of the Project Gutenberg/i;
+    const startof = /start of (\w+ )?project/i;
+    const endof = /end of (\w+ )?project/i;
 
     let dict = {};
 
-    const start = top.findIndex((s) => {
-        const meta = keyValuePair(s);
-        if (meta) dict = { ...dict, ...meta };
+    const start =
+        1 +
+        top.findIndex((s) => {
+            const meta = keyValuePair(s);
+            if (meta) dict = { ...dict, ...meta };
 
-        return alpha.test(s);
-    });
+            return startof.test(s);
+        });
 
-    let end = tail.findIndex((s) => omega.test(s));
-    end = end ? length - offset + end : end;
+    let end = tail.findIndex((s) => endof.test(s));
+    end = end ? length - bottomoffset + end : end;
 
     const corpus = lines.slice(start, end);
+    const plaintext = corpus.join('\n').trim();
 
-    return { ...dict, start, end, corpus };
+    return {
+        frontmatter: { ...dict, start, end },
+        plaintext,
+    };
 }
 
 function keyValuePair(s = '') {
