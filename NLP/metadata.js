@@ -32,9 +32,10 @@ function metadata(filename, front = {}) {
 
     const corpus = lines.slice(start, end);
     const plaintext = corpus.join('\n').trim();
+    const size = plaintext.length;
 
     return {
-        frontmatter: { ...front, ...dict, filename, start, end },
+        frontmatter: { ...front, ...dict, filename, size, start, end },
         plaintext,
     };
 }

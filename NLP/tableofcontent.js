@@ -3,11 +3,11 @@ const path = require('path');
 
 // loads a Gutenburg TSV text file
 // and returns a collection of book objects
-// 
+//
 // If no text files exist for the book id
 // the item will be stripped from the collection
 //
-module.exports = toc;
+module.exports = { toc };
 function toc(fn = './glossary-eng-all.tsv') {
     const filename = path.join(__dirname, fn);
     return fs
