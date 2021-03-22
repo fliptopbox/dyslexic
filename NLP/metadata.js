@@ -1,16 +1,16 @@
-const fileToLines = require("./fileToLines")
+const fileToLines = require('./fileToLines');
 
 module.exports = metadata;
-function metadata(filename, front = {}) {
+function metadata(absFilename, front = {}) {
     // extract the header metadata
     // parse everything upto the start marker
     // from the end reverse to find the end marker
     // extract the content between the markers
 
-    const lines = fileToLines(filename);
+    const lines = fileToLines(absFilename);
     const bottomoffset = 650;
     const { length } = lines;
-    const top = lines.slice(0, 50);
+    const head = lines.slice(0, 50);
     const tail = lines.slice(-bottomoffset);
 
     const startof = /start of (\w+ )?project/i;
@@ -20,7 +20,7 @@ function metadata(filename, front = {}) {
 
     const start =
         1 +
-        top.findIndex((s) => {
+        head.findIndex((s) => {
             const meta = keyValuePair(s);
             if (meta) dict = { ...dict, ...meta };
 
@@ -33,6 +33,7 @@ function metadata(filename, front = {}) {
     const corpus = lines.slice(start, end);
     const plaintext = corpus.join('\n').trim();
     const size = plaintext.length;
+    const filename = absFilename;
 
     return {
         frontmatter: { ...front, ...dict, filename, size, start, end },

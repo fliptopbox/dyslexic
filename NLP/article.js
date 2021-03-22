@@ -17,12 +17,17 @@ function parseText(plaintext) {
 
 function preprocess(string) {
     let text = String(string || '');
-    text = whitespacing(text);
-    text = leading(text);
+    text = wordspace(text);
+    text = linespace(text);
     text = unwrap(text);
     text = quotes(text);
+    text = dehyphenate(text);
 
     return text;
+}
+
+function dehyphenate(string) {
+    return string.replace(/\-+/g, ' ');
 }
 
 function vocabulary(array) {
@@ -42,6 +47,7 @@ function vocabulary(array) {
 
 function alphaonly(string) {
     // returns alphabetical characters only
+    if(!string) return "";
     const re = /\W/gi;
     return string.replace(re, '');
 }
@@ -84,13 +90,13 @@ function linearray(text, head = 0) {
     return head ? array.slice(0, -head) : array;
 }
 
-function whitespacing(string) {
+function wordspace(string) {
     return string
-        .replace(/[ ]+/g, ' ')
+        .replace(/(\w)([\.,;:"'])?[ ]+/g, '$1$2 ')
         .replace(/(\w)(\-{2,})(\w)/g, '$1 $2 $3');
 }
 
-function leading(string) {
+function linespace(string) {
     const text = string.replace(/\r+/g, '').replace(/\n\n+/g, '\n\n');
     return text;
 }
@@ -102,11 +108,11 @@ function unwrap(string) {
     return text;
 }
 
-function wordvalue(word) {
+function stringvalue(word) {
     // return the numberic value of a word
     // (basically base 36 value)
-    const latin = parseInt(word, 36);
-    return latin;
+    const chars = word.toLowerCase().replace(/[^0-9a-z]/g, '');
+    return [word, chars, parseInt(chars, 36)];
 }
 
 function vowels(word) {
@@ -132,12 +138,19 @@ function wordattr(word) {
     };
 }
 
+const stopwords = new Set(['the', 'a', 'an', 'of', 'to', 'and']);
+
+function stopword(word) {
+    return stopwords.has(word) ? 1 : 0;
+}
+
 module.exports = {
     alphaonly,
-    leading,
+    stopword,
+    linespace,
     unwrap,
     parseText,
-    whitespacing,
+    wordspace,
     quotes,
     linearray,
     preprocess,
@@ -146,7 +159,7 @@ module.exports = {
     words,
     word,
     wordattr,
-    wordvalue,
+    stringvalue,
     vowels,
     consonants,
 };

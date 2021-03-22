@@ -1,52 +1,95 @@
-const press = require('./tableofcontent');
+const fs = require('fs');
+const path = require('path');
+
+const indexfile = 'data/glossary-eng-curated.tsv';
+const corpus = require('./tableofcontent');
 const metadata = require('./metadata');
-const article = require('./article');
+const u = require('./article');
 
-const collection = press.toc();
+const collection = corpus.toc(indexfile);
 
-const row = collection[0];
-const [filepath] = row.files.slice(-1);
-const { frontmatter, plaintext } = metadata(filepath, row);
+/**/
 
-const { words, vocabulary } = article;
-const p = article.paragraphs(plaintext).map(words).filter(s => s);
-const paragraphcount = p.length;
-const paragraphwords = p.map(item => item.length);
+console.log(collection);
+collection.forEach((o) => {
+    if (o.jsonExists) {
+        // console.log('x exists', o.id, o.title);
+        return;
+    }
 
-const allwords = p.flat().filter(s => s.trim());
-const wordcount = allwords.length;
+    const {
+        jsonFilename,
+        baseFilename,
+        data,
+        summary,
+        vocabulary,
+    } = makeJsonAsset(o);
 
-const entries = Object.entries(vocabulary(allwords)) //
-    .map(([k, n]) => [k, n, { value: parseInt(k, 36) }]);
+    const json = JSON.stringify({ summary, data });
+    const vocabularyJson = JSON.stringify(vocabulary);
+    const vocFilename = `${baseFilename}-vocabulary.json`;
+    const options = { encoding: 'utf8' };
 
-const wordsunique = entries.length;
-const wordcountmax = Math.max(...paragraphwords);
-const wordsperparagraph = ((((wordcount / paragraphcount) * 1000) >> 0) / 1000);
+    fs.writeFileSync(jsonFilename, json, options);
+    fs.writeFileSync(vocFilename, vocabularyJson, options);
 
+    console.log('< done', summary.title);
+    // console.log('< ', summary);
 
-frontmatter.wordcount = wordcount;
-frontmatter.paragraphcount = paragraphcount;
-frontmatter.wordsunique = wordsunique;
-frontmatter.wordcountmax = wordcountmax;
-frontmatter.wordsperparagraph = wordsperparagraph;
+    // console.warn(Object.fromEntries(data.flat().map(check).filter(a => a)));
+    return;
+});
 
+/**/
 
+function makeJsonAsset(row) {
+    const [filepath] = row.files.slice(-1);
+    const { frontmatter, plaintext } = metadata(filepath);
 
+    const id = row?.id;
+    const title = frontmatter?.title || '*' + row?.title;
 
-const sorted = entries.sort((a, b) => b[1] - a[1]);
+    console.log('> ', id, title);
 
-// console.log("total words", allwords.length);
-// console.log("total paragraphs", p.length);
-console.log("total paragraph words", paragraphwords);
+    const p = u
+        .paragraphs(plaintext)
+        .map(u.words)
+        .filter((s) => s);
 
-console.log(dictionaryToFrontmatter(frontmatter));
-// console.log(sorted.slice(0, 50));
-// console.log(dictionaryToFrontmatter(frontmatter));
+    const paragraphcount = p.length;
+    const paragraphwords = p.map((item) => item.length);
 
-function dictionaryToFrontmatter(object) {
-    // Given a dictionart output
-    // YAML frontmatter block
-    const entries = Object.entries(object).map(([k, v]) => `${k}: ${v}`);
+    const allwords = p.flat().filter((s) => s);
+    const wordcount = allwords.length;
+    const vocabulary = u.vocabulary(allwords);
 
-    return ['---', ...entries, '---', ''].join('\n');
+    const wordsunique = Object.keys(vocabulary).length;
+    const wordcountmax = paragraphwords.reduce((a, c) => Math.max(a, c), 0);
+    const wordsperparagraph = Number((wordcount / paragraphcount).toFixed(3));
+
+    const summary = {
+        ...row,
+        ...frontmatter,
+        wordcount,
+        paragraphcount,
+        wordsunique,
+        wordcountmax,
+        wordsperparagraph,
+    };
+
+    const { filename } = frontmatter;
+    const baseFilename = filename.replace(/\.\w+$/i, '');
+    const jsonFilename = `${baseFilename}.json`;
+    const data = p.map((words) => words.map((w) => u.stringvalue(w).slice(-2)));
+
+    return { jsonFilename, baseFilename, data, summary, vocabulary };
 }
+
+/**!/
+function check(row) {
+    const [word, value] = row;
+    if (!word) return null;
+    const string = value.toString(36);
+    return string !== word ? [word, [string, value]] : null;
+}
+/**/

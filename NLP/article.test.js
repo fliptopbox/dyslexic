@@ -40,6 +40,8 @@ describe('description', () => {
         expect(whitespacing('alpha-beta')).toEqual('alpha-beta');
         expect(whitespacing('alpha--beta')).toEqual('alpha -- beta');
         expect(whitespacing('alpha  beta')).toEqual('alpha beta');
+        expect(whitespacing('    alpha  beta')).toEqual('    alpha beta');
+        expect(whitespacing('    alpha.   beta')).toEqual('    alpha. beta');
     });
 
     test('identifies a valid word object', () => {
