@@ -47,7 +47,7 @@ function randomTweet(e) {
 
 function publishMessage() {
     console.log('Generate random messages', messageCounter, messageModulus);
-    const generator = [oxymoronMessage, randomMessage];
+    const generator = [oxymoronMessage, randomMessage, quotationMessage];
     const index = ((Math.random() * 100) >> 0) % generator.length;
     const message = generator[index]();
 
@@ -55,22 +55,65 @@ function publishMessage() {
     messageCounter = 0;
 }
 
-function randomMessage() {
-    const text = sentence();
+function weekdayWord() {
+    const names = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+    ];
+    const i = new Date().getDay();
+    return names[i];
+}
+
+function weekdayHash() {
+    const day = weekdayWord();
+    const sentences = [
+        `${day}Bloody${day}`,
+        `Another${day}`,
+        `Its${day}AllDay`,
+        `${day}Again`,
+        `${day}IsAlmostYesterday`,
+        `TommorrowIsNot${day}`,
+        `Cancel${day}`,
+        `${day}HatesMe`,
+    ];
+    const i = (Math.random() * 1000) % sentences.length >> 0;
+    return sentences[i];
+}
+
+function hmmmmm(prefix = "H", nth = "m") {
+    const array = [...Array(((Math.random() * 16) >> 0) + 2)];
+    const trailing = array.map(() => nth).join('');
+    return (prefix + trailing);
+}
+
+module.exports.randomMessage = randomMessage;
+function randomMessage(m = 0) {
+    const text = sentence(m);
     const tags = [
-        'DicemanPoetry',
-        'MadnessPassedBy',
-        'SurrealNonSense',
-        'Silliness',
+        'DicemanDialogue',
+        'SurrealNonsense',
         'StrangeProes',
+        'PeculiarProes',
+        hmmmmm(),
         'RandomThingToSay',
+        weekdayHash(),
     ].sort(() => Math.random() - 0.5);
 
     const x = tags.length / 2;
     const n = x - ((Math.random() * x) >> 0);
     const array = tags.slice(-n);
-    const items = ['WritingCommunity', ...array].map((s) => `#${s}`);
-    const message = [text.trim(), '', '', ...items].join('\n');
+    const hashtags = ['WritingCommunity', ...array]
+        .map((s) => `#${s}`)
+        .slice(0, 5)
+        .sort(() => Math.random() - 0.5);
+
+    const textlines = `${text}\t`.split('\t');
+    const message = [...textlines, '', '', ...hashtags].join('\n');
 
     return message;
 }

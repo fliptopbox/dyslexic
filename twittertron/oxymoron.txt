@@ -34,3 +34,9 @@ Isaac B Singer	We must believe in free will. We have no choice.
 Yogi Berra	Why don't you pair ‘em up in threes?
 Dolly Parton	You'd be surprised how much it costs to look this cheap.
 Samuel Goldwyn	i never liked you and i always will
+Terje Mathisen	All programming is an exercise in caching.
+Donald Knuth	Software is hard.
+Mark Twain	They did not know it was impossible, so they did it!
+Unknown	Nothing is more permanent than a temporary solution.
+Pablo Picasso	Computers are useless. They can only give you answers.
+Alan Perlis	Simplicity does not precede complexity, but follows it.

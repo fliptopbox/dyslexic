@@ -8,14 +8,18 @@ const filename = './random.txt';
 const fullpath = path.join(__dirname, filename);
 
 const text = fs.readFileSync(fullpath, 'utf8');
-const sentences = unique(text);
+const sentences = unique(text).sort(() => Math.random() - 0.5);
+
 let n = (Math.random() * sentences.length) >> 0;
 
 function unique(string) {
-   const array = string
-      .trim()
-      .split('\n')
-      .filter(s => /^\w+/g.test(s));
+    // strips double entries
+    // filters comments
+
+    const array = string
+        .trim()
+        .split('\n')
+        .filter((s) => /^\w+/g.test(s));
 
     return Array.from(new Set(array));
 }
@@ -31,8 +35,8 @@ function save() {
     fs.writeFile(abspath, text, options, fn);
 }
 
-function sentence() {
-    n += 1;
+function sentence(m = 0) {
+    n += m + 1;
     const u = sentences.length;
     const i = n % u;
     return sentences[i];
@@ -51,5 +55,5 @@ module.exports = {
     sentence,
     current,
     save,
-   unique
+    unique,
 };
