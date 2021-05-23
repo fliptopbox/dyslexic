@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const w = require('./word');
-const rc = require("./runtime");
+const rc = require('./runtime');
 
 let glossary = {};
 let state = {
@@ -24,7 +24,7 @@ if (process.messages) {
 
 module.exports = wordUsage;
 function wordUsage(e) {
-    const { showsummary, showhead } = rc("word-usage");
+    const { showsummary, showhead } = rc('word-usage');
     const { words } = e;
 
     words.forEach((s) => {
@@ -109,8 +109,14 @@ function setFilename(ext = 'json') {
 
 function load() {
     const filename = setFilename();
+    const folder = path.join(__dirname, datafolder);
     const fullpath = path.join(__dirname, datafolder, filename);
     let object;
+
+    if (!fs.existsSync(folder)) {
+        console.log('Creating folder', folder);
+        fs.mkdirSync(folder);
+    }
 
     console.log('Loading %s', filename);
 
@@ -147,6 +153,7 @@ function save() {
     );
 
     const filename = setFilename();
+    const folder = path.join(__dirname, datafolder);
     const fullpath = path.join(__dirname, datafolder, filename);
 
     const object = Object.fromEntries(entries);
@@ -155,6 +162,11 @@ function save() {
 
     const content = JSON.stringify(object);
     const options = { encoding: 'utf8', flag: 'w' };
+
+    if (!fs.existsSync(folder)) {
+        console.log('Creating folder', folder);
+        fs.mkdirSync(folder);
+    }
 
     try {
         fs.writeFileSync(fullpath, content, options);

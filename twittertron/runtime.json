@@ -7,12 +7,12 @@
         "showhead": 0
     },
     "flowrate": {
+        "showflow": false,
         "preroll": 100,
         "history": 10000,
         "emasize": 8,
         "barwidth": 50,
         "flowrate": true,
-        "showflow": true,
         "spikeratio": 0.33,
         "flowpermessage": 15,
         "barchar": ["▒", "░", "┋", "▓", "█"]

@@ -47,7 +47,7 @@ function randomTweet(e) {
 
 function publishMessage() {
     console.log('Generate random messages', messageCounter, messageModulus);
-    const generator = [oxymoronMessage, randomMessage, quotationMessage];
+    const generator = [oxymoronMessage, randomMessage];
     const index = ((Math.random() * 100) >> 0) % generator.length;
     const message = generator[index]();
 
@@ -85,10 +85,10 @@ function weekdayHash() {
     return sentences[i];
 }
 
-function hmmmmm(prefix = "H", nth = "m") {
+function hmmmmm(prefix = 'H', nth = 'm') {
     const array = [...Array(((Math.random() * 16) >> 0) + 2)];
     const trailing = array.map(() => nth).join('');
-    return (prefix + trailing);
+    return prefix + trailing;
 }
 
 module.exports.randomMessage = randomMessage;
