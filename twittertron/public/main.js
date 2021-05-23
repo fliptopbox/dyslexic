@@ -1,11 +1,16 @@
-const { hostname, protocol } = window.location;
-const host = `${protocol.replace(/^http/i, 'ws')}//${hostname}:3030`;
+const host = getSocketHost(window.location);
 const ws = new WebSocket(host);
 
 ws.onopen = () => ws.send('hello');
 ws.onmessage = (e) => parseMessasge(e);
 
 window.socket = ws;
+
+function getSocketHost({ hostname, protocol }) {
+    const port = /localhost/i.test(hostname) ? ':3000' : '';
+    const proto = `${protocol.replace(/^http/i, 'ws')}`;
+    return `${proto}//${hostname}${port}`;
+}
 
 function parseMessasge({ data }) {
     if (!data) return;
@@ -23,7 +28,6 @@ function parseMessasge({ data }) {
 
     if (/^flow/i.test(data)) {
         // console.log(data);
-        console.log(1);
     }
 }
 
@@ -42,7 +46,7 @@ function progress(tsv) {
 }
 
 function lastmessage(txt) {
-    txt = txt.replace(/\n\n+/g, "<hr>");
+    txt = txt.replace(/\n\n+/g, '<hr>');
     const array = txt.split('\n').map((s) => {
         let text = `${s}`.trim() ? s : '<hr>';
         text = text.replace(/(#.*)/, `<em>$1</em>`);
